@@ -4,7 +4,12 @@ const symbols = require('./lib/symbols');
 module.exports.addService = symbols.addService;
 module.exports.removeService = symbols.removeService;
 module.exports.setServices = symbols.setServices;
+
+/** Symbol used for searching for new services using TimedDiscovery */
 module.exports.search = symbols.search;
+
+/** Symbol used to output debug information for a discovery instance */
+module.exports.debug = symbols.debug;
 
 module.exports.AbstractDiscovery = require('./lib/abstract');
 module.exports.BasicDiscovery = require('./lib/basic');
