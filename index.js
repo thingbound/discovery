@@ -16,3 +16,8 @@ module.exports.BasicDiscovery = require('./lib/basic');
 module.exports.ManualDiscovery = require('./lib/manual');
 module.exports.ExpiringDiscovery = require('./lib/expiring');
 module.exports.TimedDiscovery = require('./lib/timed');
+
+const CombinedDiscovery = require('./lib/combined');
+module.exports.combine = function(...instances) {
+	return new CombinedDiscovery(instances);
+};
