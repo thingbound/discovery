@@ -4,6 +4,8 @@ const symbols = require('./lib/symbols');
 module.exports.addService = symbols.addService;
 module.exports.removeService = symbols.removeService;
 module.exports.setServices = symbols.setServices;
+module.exports.refService = symbols.refService;
+module.exports.unrefService = symbols.unrefService;
 
 /** Symbol used for searching for new services using TimedDiscovery */
 module.exports.search = symbols.search;
