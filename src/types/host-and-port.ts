@@ -80,4 +80,16 @@ export class HostAndPort {
 			return new HostAndPort(address, port);
 		}
 	}
+
+	public static compare(a: HostAndPort, b: HostAndPort): number {
+		if(a.host < b.host) {
+			return -1;
+		}
+
+		if(a.host > b.host) {
+			return 1;
+		}
+
+		return a.port < b.port ? -1 : (a.port === b.port ? 0 : 1);
+	}
 }
