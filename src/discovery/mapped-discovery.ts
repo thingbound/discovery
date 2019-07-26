@@ -1,8 +1,8 @@
-import { Service } from './service';
+import { Service } from '../service';
 import { Discovery } from './discovery';
 
 import { LayeredDiscovery } from './internal';
-import { AdvancedMapper } from './mapper';
+import { AdvancedMapper } from '../mapper';
 
 /**
  * Information about a mapping. Used to keep track of the actually mapped

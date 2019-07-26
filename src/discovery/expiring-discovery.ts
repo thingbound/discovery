@@ -1,5 +1,5 @@
 import { BasicDiscovery } from './internal';
-import { Service } from './service';
+import { Service } from '../service';
 
 /**
  * Options available when creating an expiring discovery.

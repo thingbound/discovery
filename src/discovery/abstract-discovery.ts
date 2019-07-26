@@ -1,9 +1,9 @@
 import debug from 'debug';
 import { Event } from 'atvik';
 
-import { Service } from './service';
-import { ServicePredicate } from './predicate';
-import { AdvancedMapper, Mapper, isAdvancedMapper } from './mapper';
+import { Service } from '../service';
+import { ServicePredicate } from '../predicate';
+import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
 
 import { Discovery } from './discovery';
 

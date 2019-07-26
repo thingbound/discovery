@@ -1,5 +1,5 @@
 import { AbstractDiscovery } from './internal';
-import { Service } from './service';
+import { Service } from '../service';
 
 import isEqual from 'fast-deep-equal';
 

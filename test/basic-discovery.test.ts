@@ -1,4 +1,4 @@
-import { BasicDiscovery } from '../src/internal';
+import { BasicDiscovery } from '../src/discovery/internal';
 import { Service } from '../src/service';
 
 import { TestService } from './test-service';

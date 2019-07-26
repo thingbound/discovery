@@ -1,5 +1,5 @@
 import { Discovery } from './discovery';
-import { Service } from './service';
+import { Service } from '../service';
 import { BasicDiscovery } from './internal';
 
 /**

@@ -1,5 +1,5 @@
 import { BasicDiscovery } from './internal';
-import { Service } from './service';
+import { Service } from '../service';
 
 /**
  * Discovery implementation for manually adding or removing available services.

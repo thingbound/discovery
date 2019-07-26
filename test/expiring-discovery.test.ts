@@ -1,4 +1,4 @@
-import { ExpiringDiscovery } from '../src/expiring-discovery';
+import { ExpiringDiscovery } from '../src/discovery/expiring-discovery';
 import { Service } from '../src/service';
 
 import { TestService } from './test-service';
