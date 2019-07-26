@@ -13,3 +13,5 @@ export * from './discovery/expiring-discovery';
 export * from './discovery/timed-discovery';
 export * from './discovery/combined-discovery';
 export * from './discovery/manual-discovery';
+
+export * from './types';
