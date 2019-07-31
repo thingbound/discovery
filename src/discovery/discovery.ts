@@ -96,7 +96,7 @@ export interface Discovery<S extends Service> {
 	 * more events are triggered and that resources used by the discovery are
 	 * released.
 	 */
-	destroy(): void;
+	destroy(): Promise<void>;
 
 	/**
 	 * Get if this discovery has been destroyed.

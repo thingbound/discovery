@@ -130,11 +130,13 @@ export abstract class AbstractDiscovery<S extends Service> implements Discovery<
 		throw new Error();
 	}
 
-	public destroy() {
-		if(this.destroyed) return;
+	public destroy(): Promise<void> {
+		if(this.destroyed) return Promise.resolve();
 
 		this._destroyed = true;
 		this.destroyEvent.emit();
+
+		return Promise.resolve();
 	}
 
 	get destroyed() {

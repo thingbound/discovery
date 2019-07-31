@@ -156,12 +156,12 @@ export abstract class ExpiringDiscovery<S extends Service> extends BasicDiscover
 		this.rescheduleExpirer();
 	}
 
-	public destroy() {
-		super.destroy();
-
+	public async destroy(): Promise<void> {
 		clearTimeout(this.expirationTimer);
 
 		this.nextExpiration = 0;
 		this.expirationTimer = undefined;
+
+		await super.destroy();
 	}
 }

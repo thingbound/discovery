@@ -47,7 +47,7 @@ export class CombinedDiscovery<S extends Service> extends BasicDiscovery<S> {
 		}
 	}
 
-	public destroy() {
+	public async destroy(): Promise<void> {
 		if(! this.destroyed) {
 			// Release all of the events for every instance
 			for(const instance of this.instances) {
@@ -57,7 +57,7 @@ export class CombinedDiscovery<S extends Service> extends BasicDiscovery<S> {
 			}
 		}
 
-		super.destroy();
+		await super.destroy();
 	}
 
 	private handleError(error: Error) {

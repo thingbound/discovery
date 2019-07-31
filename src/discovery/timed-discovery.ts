@@ -78,9 +78,9 @@ export abstract class TimedDiscovery<S extends Service> extends ExpiringDiscover
 	 */
 	protected abstract search(): void;
 
-	public destroy() {
+	public async destroy(): Promise<void> {
 		clearInterval(this.searchInterval);
 
-		super.destroy();
+		await super.destroy();
 	}
 }

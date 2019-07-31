@@ -53,7 +53,7 @@ export abstract class LayeredDiscovery<S extends Service, P extends Service> ext
 	/**
 	 * Destroy this discovery.
 	 */
-	public destroy() {
+	public async destroy(): Promise<void> {
 		if(this.destroyed) return;
 
 		this.parent.onAvailable.unsubscribe(this.handleParentServiceAvailable);
@@ -62,6 +62,6 @@ export abstract class LayeredDiscovery<S extends Service, P extends Service> ext
 
 		this.parent.onDestroy.unsubscribe(this.destroy);
 
-		super.destroy();
+		await super.destroy();
 	}
 }
