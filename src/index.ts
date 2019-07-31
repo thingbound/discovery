@@ -14,4 +14,7 @@ export * from './discovery/timed-discovery';
 export * from './discovery/combined-discovery';
 export * from './discovery/manual-discovery';
 
+export * from './publishing/service-publisher';
+export * from './publishing/abstract-service-publisher';
+
 export * from './types';
