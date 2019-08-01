@@ -1,4 +1,4 @@
-import { AbstractDiscovery } from './internal';
+import { AbstractServiceDiscovery } from './internal';
 import { Service } from '../service';
 
 import isEqual from 'fast-deep-equal';
@@ -7,7 +7,7 @@ import isEqual from 'fast-deep-equal';
  * Basic discovery intended for extension. This type of discovery provides
  * functions to update, remove and set services available.
  */
-export abstract class BasicDiscovery<S extends Service> extends AbstractDiscovery<S> {
+export abstract class BasicServiceDiscovery<S extends Service> extends AbstractServiceDiscovery<S> {
 	private serviceMap: Map<string, S>;
 
 	constructor(type: string) {

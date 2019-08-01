@@ -1,4 +1,4 @@
-import { ExpiringDiscovery} from './expiring-discovery';
+import { ExpiringServiceDiscovery} from './expiring-service-discovery';
 import { Service } from '../service';
 
 export interface TimedDiscoveryOptions {
@@ -49,7 +49,7 @@ function resolveSearchTime(options: TimedDiscoveryOptions): number {
 	}
 }
 
-export abstract class TimedDiscovery<S extends Service> extends ExpiringDiscovery<S> {
+export abstract class TimedServiceDiscovery<S extends Service> extends ExpiringServiceDiscovery<S> {
 	private readonly searchInterval: any;
 
 	constructor(type: string, options: TimedDiscoveryOptions) {

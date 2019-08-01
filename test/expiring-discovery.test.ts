@@ -1,4 +1,4 @@
-import { ExpiringDiscovery } from '../src/discovery/expiring-discovery';
+import { ExpiringServiceDiscovery } from '../src/discovery/expiring-service-discovery';
 import { Service } from '../src/service';
 
 import { TestService } from './test-service';
@@ -75,7 +75,7 @@ describe('Timed Discovery', () => {
 	});
 });
 
-class TestDiscovery<S extends Service> extends ExpiringDiscovery<S> {
+class TestDiscovery<S extends Service> extends ExpiringServiceDiscovery<S> {
 
 	constructor() {
 		super('test', {

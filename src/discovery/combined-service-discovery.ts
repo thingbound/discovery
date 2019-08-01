@@ -1,15 +1,15 @@
-import { BasicDiscovery } from './internal';
+import { BasicServiceDiscovery } from './internal';
 import { Service } from '../service';
-import { Discovery } from './discovery';
+import { ServiceDiscovery } from './service-discovery';
 import { SubscriptionHandle } from 'atvik';
 
 interface ServiceData<S extends Service> {
 	services: S[];
-	discoveries: Discovery<S>[];
+	discoveries: ServiceDiscovery<S>[];
 }
 
 interface Instance<S extends Service> {
-	discovery: Discovery<S>;
+	discovery: ServiceDiscovery<S>;
 
 	handles: SubscriptionHandle[];
 }
@@ -17,11 +17,11 @@ interface Instance<S extends Service> {
 /**
  * Combine services from several discoveries.
  */
-export class CombinedDiscovery<S extends Service> extends BasicDiscovery<S> {
+export class CombinedServiceDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
 	private instances: Instance<S>[];
 	private combinedServiceData: Map<string, ServiceData<S>>;
 
-	constructor(discoveries: Discovery<S>[]) {
+	constructor(discoveries: ServiceDiscovery<S>[]) {
 		super('combined');
 
 		this.combinedServiceData = new Map();
@@ -64,7 +64,7 @@ export class CombinedDiscovery<S extends Service> extends BasicDiscovery<S> {
 		super.logAndEmitError(error);
 	}
 
-	private handleAvailableOrUpdate(discovery: Discovery<S>, service: S) {
+	private handleAvailableOrUpdate(discovery: ServiceDiscovery<S>, service: S) {
 		let data = this.combinedServiceData.get(service.id);
 		if(data) {
 			// A service with this identifier is currently available
@@ -96,7 +96,7 @@ export class CombinedDiscovery<S extends Service> extends BasicDiscovery<S> {
 		}
 	}
 
-	private handleUnavailable(discovery: Discovery<S>, service: S) {
+	private handleUnavailable(discovery: ServiceDiscovery<S>, service: S) {
 		const data = this.combinedServiceData.get(service.id);
 		if(! data) {
 			// No services registered for the id

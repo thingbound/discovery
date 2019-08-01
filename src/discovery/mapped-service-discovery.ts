@@ -1,7 +1,7 @@
 import { Service } from '../service';
-import { Discovery } from './discovery';
+import { ServiceDiscovery } from './service-discovery';
 
-import { LayeredDiscovery } from './internal';
+import { LayeredServiceDiscovery } from './internal';
 import { AdvancedMapper } from '../mapper';
 
 /**
@@ -17,11 +17,11 @@ interface MappedService<S> {
 /**
  * Provides mapping of any discovery instance.
  */
-export class MappedDiscovery<I extends Service, S extends Service> extends LayeredDiscovery<S, I> {
+export class MappedDiscovery<I extends Service, S extends Service> extends LayeredServiceDiscovery<S, I> {
 	private readonly mappedServices: Map<string, MappedService<S>>;
 	private readonly mapper: AdvancedMapper<I, S>;
 
-	constructor(parent: Discovery<I>, mapper: AdvancedMapper<I, S>) {
+	constructor(parent: ServiceDiscovery<I>, mapper: AdvancedMapper<I, S>) {
 		super('mapped', parent);
 
 		this.mappedServices = new Map();

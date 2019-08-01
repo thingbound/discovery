@@ -1,4 +1,4 @@
-import { BasicDiscovery } from '../src/discovery/internal';
+import { BasicServiceDiscovery } from '../src/discovery/internal';
 import { Service } from '../src/service';
 
 import { TestService } from './test-service';
@@ -76,7 +76,7 @@ describe('Basic Discovery', () => {
 	});
 });
 
-class TestDiscovery<S extends Service> extends BasicDiscovery<S> {
+class TestDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
 
 	constructor() {
 		super('test');

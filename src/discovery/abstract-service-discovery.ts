@@ -5,14 +5,14 @@ import { Service } from '../service';
 import { ServicePredicate } from '../predicate';
 import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
 
-import { Discovery } from './discovery';
+import { ServiceDiscovery } from './service-discovery';
 
-import { FilteredDiscovery, MappedDiscovery } from './internal';
+import { FilteredServiceDiscovery, MappedDiscovery } from './internal';
 
 /**
- * Abstract discovery implementation.
+ * Abstract service discovery implementation.
  */
-export abstract class AbstractDiscovery<S extends Service> implements Discovery<S> {
+export abstract class AbstractServiceDiscovery<S extends Service> implements ServiceDiscovery<S> {
 	/**
 	 * Debugger that can be used to output debug messages for the discovery.
 	 */
@@ -110,11 +110,11 @@ export abstract class AbstractDiscovery<S extends Service> implements Discovery<
 		return result;
 	}
 
-	public filter(predicate: ServicePredicate<S>): Discovery<S> {
-		return new FilteredDiscovery(this, predicate);
+	public filter(predicate: ServicePredicate<S>): ServiceDiscovery<S> {
+		return new FilteredServiceDiscovery(this, predicate);
 	}
 
-	public map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): Discovery<O> {
+	public map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): ServiceDiscovery<O> {
 		if(isAdvancedMapper<S, O>(mapper)) {
 			// If called using an advanced mapper create directly
 			return new MappedDiscovery(this, mapper);
@@ -126,7 +126,7 @@ export abstract class AbstractDiscovery<S extends Service> implements Discovery<
 		});
 	}
 
-	public and<O extends Service>(other: Discovery<O>): Discovery<S | O> {
+	public and<O extends Service>(other: ServiceDiscovery<O>): ServiceDiscovery<S | O> {
 		throw new Error();
 	}
 

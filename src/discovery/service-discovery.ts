@@ -8,7 +8,7 @@ import { AdvancedMapper, Mapper } from '../mapper';
  * API provides a simple contract that a consumer can use without knowing the
  * full details about the underlying discovery service.
  */
-export interface Discovery<S extends Service> {
+export interface ServiceDiscovery<S extends Service> {
 
 	/**
 	 * Event emitted when an error occurs for this discovery.
@@ -69,7 +69,7 @@ export interface Discovery<S extends Service> {
 	 *   predicate used to filter items, if this function returns `true` the
 	 *   service will be available in the filtered results
 	 */
-	filter(predicate: ServicePredicate<S>): Discovery<S>;
+	filter(predicate: ServicePredicate<S>): ServiceDiscovery<S>;
 
 	/**
 	 * Map services returned by this discovery into another type of service.
@@ -80,7 +80,7 @@ export interface Discovery<S extends Service> {
 	 *
 	 * @param mapper
 	 */
-	map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): Discovery<O>;
+	map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): ServiceDiscovery<O>;
 
 	/**
 	 * Combine this discovery with another instance that provides compatible
@@ -88,7 +88,7 @@ export interface Discovery<S extends Service> {
 	 *
 	 * @param other
 	 */
-	and<O extends Service>(other: Discovery<O>): Discovery<S | O>;
+	and<O extends Service>(other: ServiceDiscovery<O>): ServiceDiscovery<S | O>;
 
 	/**
 	 * Destroy this discovery. This should be called whenever the discovery

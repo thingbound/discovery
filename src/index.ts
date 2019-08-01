@@ -1,18 +1,18 @@
 export * from './service';
 export * from './predicate';
 export * from './mapper';
-export * from './discovery/discovery';
+export * from './discovery/service-discovery';
 
 export {
-	AbstractDiscovery,
-	BasicDiscovery,
-	LayeredDiscovery
+	AbstractServiceDiscovery,
+	BasicServiceDiscovery,
+	LayeredServiceDiscovery
 } from './discovery/internal';
 
-export * from './discovery/expiring-discovery';
-export * from './discovery/timed-discovery';
-export * from './discovery/combined-discovery';
-export * from './discovery/manual-discovery';
+export * from './discovery/expiring-service-discovery';
+export * from './discovery/timed-service-discovery';
+export * from './discovery/combined-service-discovery';
+export * from './discovery/manual-service-discovery';
 
 export * from './publishing/service-publisher';
 export * from './publishing/abstract-service-publisher';

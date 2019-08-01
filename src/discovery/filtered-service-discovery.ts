@@ -1,17 +1,17 @@
 import { Service } from '../service';
-import { Discovery } from './discovery';
+import { ServiceDiscovery } from './service-discovery';
 
-import { LayeredDiscovery } from './internal';
+import { LayeredServiceDiscovery } from './internal';
 import { ServicePredicate } from '../predicate';
 
 /**
  * Provides filtering of any discovery instance.
  */
-export class FilteredDiscovery<S extends Service> extends LayeredDiscovery<S, S> {
+export class FilteredServiceDiscovery<S extends Service> extends LayeredServiceDiscovery<S, S> {
 	private predicate: ServicePredicate<S>;
 
 	constructor(
-		parent: Discovery<S>,
+		parent: ServiceDiscovery<S>,
 		predicate: ServicePredicate<S>
 	) {
 		super('filtered', parent);

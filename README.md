@@ -1,6 +1,6 @@
 # tinkerhub-discovery
 
-This library contains base classes for building and consuming discovery
+This library contains base classes for building and consuming service discovery
 mechanisms using JavaScript and TypeScript.
 
 It is intended to be used to implement some sort of discovery mechanism, such
@@ -15,8 +15,8 @@ npm install tinkerhub-discovery
 
 ## API
 
-Two basic functionality of a discovery instance is exposed via the type
-`Discovery`:
+The basic functionality of a discovery instance is exposed via the type
+`ServiceDiscovery`:
 
 ```typescript
 const discovery = new DiscoveryInstanceHere();
@@ -125,9 +125,9 @@ If you have a need to keep a manually updated list of services, it's possible
 to create an instance of `ManualDiscovery` and add/remove services as needed:
 
 ```typescript
-import { ManualDiscovery } from 'tinkerhub-discovery';
+import { ManualServiceDiscovery } from 'tinkerhub-discovery';
 
-const discovery = new ManualDiscovery<ServiceType>();
+const discovery = new ManualServiceDiscovery<ServiceType>();
 
 // Add services
 discovery.add(new ServiceType(...));
@@ -152,9 +152,9 @@ packets and just adds them as services:
 
 ```javascript
 const dgram = require('dgram');
-const { BasicDiscovery } = require('tinkerhub-discovery');
+const { BasicServiceDiscovery } = require('tinkerhub-discovery');
 
-class CustomDiscovery extends BasicDiscovery {
+class CustomDiscovery extends BasicServiceDiscovery {
   constructor() {
     super('custom');
 
@@ -185,14 +185,14 @@ class CustomDiscovery extends BasicDiscovery {
 ```
 
 The above discovery would never remove any services, but extending
-`ExpiringDiscovery` would activate time based and remove services based on when
-they were last seen:
+`ExpiringServiceDiscovery` would activate time based and remove services based 
+on when they were last seen:
 
 ```javascript
 const dgram = require('dgram');
-const { ExpiringDiscovery } = require('tinkerhub-discovery');
+const { ExpiringServiceDiscovery } = require('tinkerhub-discovery');
 
-class CustomDiscovery extends ExpiringDiscovery {
+class CustomDiscovery extends ExpiringServiceDiscovery {
   constructor() {
     super('custom', {
       maxStaleTime: 60*1000 /* milliseconds */

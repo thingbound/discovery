@@ -1,14 +1,14 @@
-import { Discovery } from './discovery';
+import { ServiceDiscovery } from './service-discovery';
 import { Service } from '../service';
-import { BasicDiscovery } from './internal';
+import { BasicServiceDiscovery } from './internal';
 
 /**
  * Abstract discovery for implementing layers, such as filtering and mapping.
  */
-export abstract class LayeredDiscovery<S extends Service, P extends Service> extends BasicDiscovery<S> {
-	protected readonly parent: Discovery<P>;
+export abstract class LayeredServiceDiscovery<S extends Service, P extends Service> extends BasicServiceDiscovery<S> {
+	protected readonly parent: ServiceDiscovery<P>;
 
-	constructor(type: string, parent: Discovery<P>) {
+	constructor(type: string, parent: ServiceDiscovery<P>) {
 		super(type);
 
 		this.parent = parent;

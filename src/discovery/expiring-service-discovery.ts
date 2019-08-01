@@ -1,4 +1,4 @@
-import { BasicDiscovery } from './internal';
+import { BasicServiceDiscovery } from './internal';
 import { Service } from '../service';
 
 /**
@@ -56,7 +56,7 @@ class TimerNode {
  * Discovery implementation that supports expiring services after a certain
  * amount of time.
  */
-export abstract class ExpiringDiscovery<S extends Service> extends BasicDiscovery<S> {
+export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
 	public readonly maxStaleTime: number;
 
 	private readonly timerHead: TimerNode;
