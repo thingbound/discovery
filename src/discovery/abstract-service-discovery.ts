@@ -8,6 +8,7 @@ import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
 import { ServiceDiscovery } from './service-discovery';
 
 import { FilteredServiceDiscovery, MappedDiscovery } from './internal';
+import { CombinedServiceDiscovery } from './combined-service-discovery';
 
 /**
  * Abstract service discovery implementation.
@@ -127,7 +128,7 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 	}
 
 	public and<O extends Service>(other: ServiceDiscovery<O>): ServiceDiscovery<S | O> {
-		throw new Error();
+		throw new CombinedServiceDiscovery<S | O>([ this, other ]);
 	}
 
 	public destroy(): Promise<void> {
