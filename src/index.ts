@@ -8,12 +8,12 @@ export * from './discovery/releaseable-service-discovery';
 export {
 	AbstractServiceDiscovery,
 	BasicServiceDiscovery,
-	LayeredServiceDiscovery
+	LayeredServiceDiscovery,
+	MergedServiceDiscovery
 } from './discovery/internal';
 
 export * from './discovery/expiring-service-discovery';
 export * from './discovery/timed-service-discovery';
-export * from './discovery/combined-service-discovery';
 export * from './discovery/manual-service-discovery';
 
 export * from './publishing/service-publisher';

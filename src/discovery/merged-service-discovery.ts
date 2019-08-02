@@ -19,9 +19,9 @@ interface Instance<S extends Service> {
 }
 
 /**
- * Combine services from several discoveries.
+ * Merge services from several discoveries.
  */
-export class CombinedServiceDiscovery<S extends Service>
+export class MergedServiceDiscovery<S extends Service>
 	extends BasicServiceDiscovery<S>
 	implements ReleaseableServiceDiscovery<S>
 {

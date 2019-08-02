@@ -83,7 +83,7 @@ export interface ServiceDiscovery<S extends Service> {
 	map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): ServiceDiscovery<O>;
 
 	/**
-	 * Combine this discovery with another instance that provides compatible
+	 * Merge this discovery with another instance that provides compatible
 	 * services. Services will be merged using their `id`.
 	 *
 	 * @param other
