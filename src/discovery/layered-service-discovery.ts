@@ -1,11 +1,16 @@
 import { ServiceDiscovery } from './service-discovery';
+import { ReleaseableServiceDiscovery } from './releaseable-service-discovery';
+
 import { Service } from '../service';
 import { BasicServiceDiscovery } from './internal';
 
 /**
  * Abstract discovery for implementing layers, such as filtering and mapping.
  */
-export abstract class LayeredServiceDiscovery<S extends Service, P extends Service> extends BasicServiceDiscovery<S> {
+export abstract class LayeredServiceDiscovery<S extends Service, P extends Service>
+	extends BasicServiceDiscovery<S>
+	implements ReleaseableServiceDiscovery<S>
+{
 	protected readonly parent: ServiceDiscovery<P>;
 
 	constructor(type: string, parent: ServiceDiscovery<P>) {
@@ -51,9 +56,9 @@ export abstract class LayeredServiceDiscovery<S extends Service, P extends Servi
 	protected abstract handleParentServiceUpdate(service: P, previousService: P): void;
 
 	/**
-	 * Destroy this discovery.
+	 * Release this discovery, it will no longer receive any service updates.
 	 */
-	public async destroy(): Promise<void> {
+	public async release(): Promise<void> {
 		if(this.destroyed) return;
 
 		this.parent.onAvailable.unsubscribe(this.handleParentServiceAvailable);
@@ -63,5 +68,18 @@ export abstract class LayeredServiceDiscovery<S extends Service, P extends Servi
 		this.parent.onDestroy.unsubscribe(this.destroy);
 
 		await super.destroy();
+	}
+
+	/**
+	 * Destroy this discovery and its parent.
+	 */
+	public async destroy(): Promise<void> {
+		if(this.destroyed) return;
+
+		// Release our resources.
+		await this.release();
+
+		// Destroy the parent
+		await this.parent.destroy();
 	}
 }

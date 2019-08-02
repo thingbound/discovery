@@ -1,7 +1,11 @@
-import { BasicServiceDiscovery } from './internal';
-import { Service } from '../service';
-import { ServiceDiscovery } from './service-discovery';
 import { SubscriptionHandle } from 'atvik';
+
+import { Service } from '../service';
+
+import { ServiceDiscovery } from './service-discovery';
+import { ReleaseableServiceDiscovery } from './releaseable-service-discovery';
+
+import { BasicServiceDiscovery } from './internal';
 
 interface ServiceData<S extends Service> {
 	services: S[];
@@ -17,7 +21,10 @@ interface Instance<S extends Service> {
 /**
  * Combine services from several discoveries.
  */
-export class CombinedServiceDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
+export class CombinedServiceDiscovery<S extends Service>
+	extends BasicServiceDiscovery<S>
+	implements ReleaseableServiceDiscovery<S>
+{
 	private instances: Instance<S>[];
 	private combinedServiceData: Map<string, ServiceData<S>>;
 
@@ -47,7 +54,7 @@ export class CombinedServiceDiscovery<S extends Service> extends BasicServiceDis
 		}
 	}
 
-	public async destroy(): Promise<void> {
+	public async release(): Promise<void> {
 		if(! this.destroyed) {
 			// Release all of the events for every instance
 			for(const instance of this.instances) {
@@ -58,6 +65,17 @@ export class CombinedServiceDiscovery<S extends Service> extends BasicServiceDis
 		}
 
 		await super.destroy();
+	}
+
+	public async destroy(): Promise<void> {
+		await this.release();
+
+		if(! this.destroyed) {
+			// Destroy all of the instances
+			for(const instance of this.instances) {
+				await instance.discovery.destroy();
+			}
+		}
 	}
 
 	private handleError(error: Error) {

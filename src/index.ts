@@ -1,7 +1,9 @@
 export * from './service';
 export * from './predicate';
 export * from './mapper';
+
 export * from './discovery/service-discovery';
+export * from './discovery/releaseable-service-discovery';
 
 export {
 	AbstractServiceDiscovery,
