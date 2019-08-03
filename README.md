@@ -200,7 +200,7 @@ class CustomDiscovery extends BasicServiceDiscovery {
       };
 
       // Add it to the list of services
-      this.addService(service);
+      this.updateService(service);
     });
   }
 
@@ -223,7 +223,7 @@ const { ExpiringServiceDiscovery } = require('tinkerhub-discovery');
 class CustomDiscovery extends ExpiringServiceDiscovery {
   constructor() {
     super('custom', {
-      maxStaleTime: 60*1000 /* milliseconds */
+      expirationTime: 60*1000 /* milliseconds */
     });
 
     this.socket = dgram.createSocket('udp4');
@@ -240,7 +240,7 @@ class CustomDiscovery extends ExpiringServiceDiscovery {
       };
 
       // Add it to the list of services
-      this.addService(service);
+      this.updateService(service);
     });
   }
 
