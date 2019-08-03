@@ -76,10 +76,10 @@ export abstract class LayeredServiceDiscovery<S extends Service, P extends Servi
 	public async destroy(): Promise<void> {
 		if(this.destroyed) return;
 
-		// Release our resources.
-		await this.release();
-
 		// Destroy the parent
 		await this.parent.destroy();
+
+		// Release our resources.
+		await this.release();
 	}
 }

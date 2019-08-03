@@ -68,14 +68,14 @@ export class MergedServiceDiscovery<S extends Service>
 	}
 
 	public async destroy(): Promise<void> {
-		await this.release();
-
 		if(! this.destroyed) {
 			// Destroy all of the instances
 			for(const instance of this.instances) {
 				await instance.discovery.destroy();
 			}
 		}
+
+		await this.release();
 	}
 
 	private handleError(error: Error) {
