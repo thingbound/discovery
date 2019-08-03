@@ -39,10 +39,12 @@ discovery.onUnavailable(service => /* service is no longer available */);
 discovery.onUpdate((service, previousService) => /* service has been updated */)
 
 // When done using a discovery it should be destroyed
-discovery.destroy();
+await discovery.destroy();
 ```
 
-## Filtered and mapped views
+## Filtered, mapping and merging services
+
+### Filtering services
 
 Discovery instances can be filtered, which provides a live filtered view that
 supports events:
@@ -53,9 +55,14 @@ const filtered = discovery.filter(service => /* return true to include in filter
 // Listen to events as with the main discovery instance
 filtered.onAvailable(service => ...);
 
-// Remember to destroy the view if no longer needed
-filtered.destroy();
+// Destroy the filtered view and its parent
+await filtered.destroy();
+
+// Alternative to destroy - release the view, but do not destroy the parent
+await filtered.release();
 ```
+
+### Mapping services into more specific types
 
 Similar to filtering it is possible to map services into another object, as long
 as the mapped object contains an identifier:
@@ -100,6 +107,29 @@ const mapped = discovery.map({
 })
 ```
 
+### Merging services from multiple discoveries
+
+It's possible to create a merged view that returns services from multiple
+discoveries. Such services will be merged using their identifier and the first
+service seen will be returned for as long as it is valid.
+
+```typescript
+// Merge two discoveries together
+const discovery = firstDiscovery.and(secondDiscovery);
+
+// To combine more than two discoveries use `MergedDiscovery` directly
+import { MergedDiscovery } from 'tinkerhub-discovery';
+new MergedDiscovery([ firstDiscovery, secondDiscovery, thirdDiscovery ]);
+
+// Destroy the discovery and the merged discoveries
+await discovery.destroy();
+
+// Release this discovery without destroying the merged discoveries
+await discovery.release();
+```
+
+### Combining filtering and mapping
+
 Combining filtering and mapping can make it easy to find and create a more
 specific API for a service, like this example that looks for Philips Hue
 bridges:
@@ -107,16 +137,14 @@ bridges:
 ```typescript
 import { SSDPDiscovery } from 'tinkerhub-ssdp';
 
-const root = new SSDPDiscovery();
-
-const filteredAndMapped = root
+const discovery = new SSDPDiscovery()
   .filter(service => service.headers['HUE-BRIDGEID'])
   .map(service => new HueBridge(service));
 
-filteredAndMapped.onAvailable(hueBridge => /* instance of HueBridge is available */);
+discovery.onAvailable(hueBridge => /* instance of HueBridge is available */);
 
-// To shutdown discovery (will destroy the filtered and mapped views)
-root.destroy();
+// To shutdown discovery (will destroy the root discovery, the filtered and mapped view)
+await discovery.destroy();
 ```
 
 ## Manual discovery
