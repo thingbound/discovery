@@ -1,5 +1,5 @@
-export * from './service-discovery';
-export * from './releaseable-service-discovery';
+export * from './ServiceDiscovery';
+export * from './ReleasableServiceDiscovery';
 
 export {
 	AbstractServiceDiscovery,
@@ -8,6 +8,6 @@ export {
 	MergedServiceDiscovery
 } from './internal';
 
-export * from './expiring-service-discovery';
-export * from './timed-service-discovery';
-export * from './manual-service-discovery';
+export * from './ExpiringServiceDiscovery';
+export * from './TimedServiceDiscovery';
+export * from './ManualServiceDiscovery';

@@ -1,10 +1,10 @@
 import { BasicServiceDiscovery } from './internal';
-import { Service } from '../service';
+import { Service } from '../Service';
 
 /**
  * Discovery implementation for manually adding or removing available services.
  */
-export class ManualDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
+export class ManualServiceDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
 
 	constructor(type='manual') {
 		super(type);

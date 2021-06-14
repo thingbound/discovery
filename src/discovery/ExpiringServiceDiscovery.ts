@@ -1,7 +1,7 @@
 import { ReschedulingTimerWheel } from 'timer-wheel';
 
 import { BasicServiceDiscovery } from './internal';
-import { Service } from '../service';
+import { Service } from '../Service';
 
 /**
  * Options available when creating an expiring discovery.

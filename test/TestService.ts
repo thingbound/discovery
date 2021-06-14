@@ -1,4 +1,4 @@
-import { Service } from '../src/service';
+import { Service } from '../src/Service';
 
 export class TestService implements Service {
 	public readonly id: string;

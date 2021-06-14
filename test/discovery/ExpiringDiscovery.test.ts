@@ -1,7 +1,7 @@
-import { ExpiringServiceDiscovery } from '../../src/discovery/expiring-service-discovery';
-import { Service } from '../../src/service';
+import { ExpiringServiceDiscovery } from '../../src/discovery/ExpiringServiceDiscovery';
+import { Service } from '../../src/Service';
 
-import { TestService } from '../test-service';
+import { TestService } from '../TestService';
 
 describe('Timed Discovery', function() {
 

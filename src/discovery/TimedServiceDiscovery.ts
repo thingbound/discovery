@@ -1,5 +1,5 @@
-import { ExpiringServiceDiscovery} from './expiring-service-discovery';
-import { Service } from '../service';
+import { ExpiringServiceDiscovery} from './ExpiringServiceDiscovery';
+import { Service } from '../Service';
 
 export interface TimedDiscoveryOptions {
 	/**

@@ -1,5 +1,5 @@
-import { ServiceDiscovery } from './service-discovery';
-import { Service } from '../service';
+import { ServiceDiscovery } from './ServiceDiscovery';
+import { Service } from '../Service';
 
 /**
  * Extension to `ServiceDiscovery` that supports releasing its resources.

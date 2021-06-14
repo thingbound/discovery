@@ -1,7 +1,7 @@
 import { BasicServiceDiscovery } from '../src/discovery/internal';
-import { Service } from '../src/service';
+import { Service } from '../src/Service';
 
-import { TestService } from './test-service';
+import { TestService } from './TestService';
 
 describe('Basic Discovery', () => {
 

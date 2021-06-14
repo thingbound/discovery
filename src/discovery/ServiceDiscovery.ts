@@ -1,6 +1,6 @@
 import { Subscribable } from 'atvik';
-import { Service } from '../service';
-import { ServicePredicate } from '../predicate';
+import { Service } from '../Service';
+import { ServicePredicate } from '../ServicePredicate';
 import { AdvancedMapper, Mapper } from '../mapper';
 
 /**

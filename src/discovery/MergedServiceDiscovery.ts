@@ -1,9 +1,9 @@
 import { SubscriptionHandle } from 'atvik';
 
-import { Service } from '../service';
+import { Service } from '../Service';
 
-import { ServiceDiscovery } from './service-discovery';
-import { ReleaseableServiceDiscovery } from './releaseable-service-discovery';
+import { ServiceDiscovery } from './ServiceDiscovery';
+import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
 
 import { BasicServiceDiscovery } from './internal';
 

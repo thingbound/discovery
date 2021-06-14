@@ -1,5 +1,5 @@
-import { Service } from '../service';
-import { ServiceDiscovery } from './service-discovery';
+import { Service } from '../Service';
+import { ServiceDiscovery } from './ServiceDiscovery';
 
 import { LayeredServiceDiscovery } from './internal';
 import { AdvancedMapper } from '../mapper';
@@ -17,7 +17,7 @@ interface MappedService<S> {
 /**
  * Provides mapping of any discovery instance.
  */
-export class MappedDiscovery<I extends Service, S extends Service> extends LayeredServiceDiscovery<S, I> {
+export class MappedServiceDiscovery<I extends Service, S extends Service> extends LayeredServiceDiscovery<S, I> {
 	private readonly mappedServices: Map<string, MappedService<S>>;
 	private readonly mapper: AdvancedMapper<I, S>;
 

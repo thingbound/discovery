@@ -1,5 +1,5 @@
-export * from './service';
-export * from './predicate';
+export * from './Service';
+export * from './ServicePredicate';
 export * from './mapper';
 
 export * from './discovery';

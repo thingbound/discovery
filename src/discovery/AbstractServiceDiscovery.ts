@@ -1,13 +1,13 @@
 import debug from 'debug';
 import { Event } from 'atvik';
 
-import { Service } from '../service';
-import { ServicePredicate } from '../predicate';
+import { Service } from '../Service';
+import { ServicePredicate } from '../ServicePredicate';
 import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
 
-import { ServiceDiscovery } from './service-discovery';
+import { ServiceDiscovery } from './ServiceDiscovery';
 
-import { FilteredServiceDiscovery, MappedDiscovery, MergedServiceDiscovery } from './internal';
+import { FilteredServiceDiscovery, MappedServiceDiscovery, MergedServiceDiscovery } from './internal';
 
 /**
  * Abstract service discovery implementation.
@@ -117,11 +117,11 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 	public map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): ServiceDiscovery<O> {
 		if(isAdvancedMapper<S, O>(mapper)) {
 			// If called using an advanced mapper create directly
-			return new MappedDiscovery(this, mapper);
+			return new MappedServiceDiscovery(this, mapper);
 		}
 
 		// Create an advanced mapper from the mapping function
-		return new MappedDiscovery(this, {
+		return new MappedServiceDiscovery(this, {
 			create: mapper
 		});
 	}

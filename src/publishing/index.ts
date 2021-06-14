@@ -1,2 +1,2 @@
-export * from './abstract-service-publisher';
-export * from './service-publisher';
+export * from './AbstractServicePublisher';
+export * from './ServicePublisher';

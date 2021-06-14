@@ -1,5 +1,5 @@
-import { Service } from '../service';
-import { HostAndPort } from './host-and-port';
+import { Service } from '../Service';
+import { HostAndPort } from './HostAndPort';
 
 /**
  * Service that is tied to one or more network addresses.
