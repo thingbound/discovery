@@ -1,19 +1,19 @@
-import { ServiceDiscovery } from './ServiceDiscovery';
-import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
-
 import { Service } from '../Service';
+
 import { BasicServiceDiscovery } from './internal';
+import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
+import { ServiceDiscovery } from './ServiceDiscovery';
+
 
 /**
  * Abstract discovery for implementing layers, such as filtering and mapping.
  */
 export abstract class LayeredServiceDiscovery<S extends Service, P extends Service>
 	extends BasicServiceDiscovery<S>
-	implements ReleaseableServiceDiscovery<S>
-{
+	implements ReleaseableServiceDiscovery<S> {
 	protected readonly parent: ServiceDiscovery<P>;
 
-	constructor(type: string, parent: ServiceDiscovery<P>) {
+	public constructor(type: string, parent: ServiceDiscovery<P>) {
 		super(type);
 
 		this.parent = parent;
@@ -39,19 +39,26 @@ export abstract class LayeredServiceDiscovery<S extends Service, P extends Servi
 	/**
 	 * Handle that a service is now available.
 	 *
-	 * @param service
+	 * @param service -
+	 *   service that is becoming available
 	 */
 	protected abstract handleParentServiceAvailable(service: P): void;
 
 	/**
 	 * Handle that a service is no longer available.
 	 *
-	 * @param service
+	 * @param service -
+	 *   service that is becoming unavailable
 	 */
 	protected abstract handleParentServiceUnavailable(service: P): void;
 
 	/**
 	 * Handle that a service has been updated.
+	 *
+	 * @param service -
+	 *   service that has updated
+	 * @param previousService -
+	 *   previous service instance
 	 */
 	protected abstract handleParentServiceUpdate(service: P, previousService: P): void;
 

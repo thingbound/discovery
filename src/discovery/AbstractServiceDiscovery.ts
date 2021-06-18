@@ -1,13 +1,12 @@
-import debug from 'debug';
 import { Event } from 'atvik';
+import debug from 'debug';
 
+import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
 import { Service } from '../Service';
 import { ServicePredicate } from '../ServicePredicate';
-import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
-
-import { ServiceDiscovery } from './ServiceDiscovery';
 
 import { FilteredServiceDiscovery, MappedServiceDiscovery, MergedServiceDiscovery } from './internal';
+import { ServiceDiscovery } from './ServiceDiscovery';
 
 /**
  * Abstract service discovery implementation.
@@ -49,7 +48,7 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 	 */
 	private readonly destroyEvent: Event<this>;
 
-	constructor(type: string) {
+	public constructor(type: string) {
 		this.debug = debug('th:discovery:' + type);
 		this.errorEvent = new Event(this);
 
@@ -61,29 +60,30 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 		this.destroyEvent = new Event(this);
 	}
 
-	get onError() {
+	public get onError() {
 		return this.errorEvent.subscribable;
 	}
 
 	/**
 	 * Log and emit an error for this discovery.
 	 *
-	 * @param error
+	 * @param error -
+	 * @param message -
 	 */
 	protected logAndEmitError(error: Error, message: string = 'An error occurred:') {
 		this.debug(message, error);
 		this.errorEvent.emit(error);
 	}
 
-	get onAvailable() {
+	public get onAvailable() {
 		return this.availableEvent.subscribable;
 	}
 
-	get onUnavailable() {
+	public get onUnavailable() {
 		return this.unavailableEvent.subscribable;
 	}
 
-	get onUpdate() {
+	public get onUpdate() {
 		return this.updateEvent.subscribable;
 	}
 
@@ -139,11 +139,11 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 		return Promise.resolve();
 	}
 
-	get destroyed() {
+	public get destroyed() {
 		return this._destroyed;
 	}
 
-	get onDestroy() {
+	public get onDestroy() {
 		return this.destroyEvent.subscribable;
 	}
 }

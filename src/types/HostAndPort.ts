@@ -1,6 +1,6 @@
 import { v6 } from 'ip-regex';
 
-const IPv6 = v6({exact: true});
+const IPv6 = v6({ exact: true });
 
 /**
  * Representation of a host and a port. Supports some basic parsing via
@@ -11,22 +11,25 @@ export class HostAndPort {
 	public readonly host: string;
 	public readonly port: number;
 
-	constructor(host: string, port: number) {
+	public constructor(host: string, port: number) {
 		this.host = host;
 		this.port = port;
 	}
 
-	get hasPort() {
+	public get hasPort() {
 		return this.port >= 0;
 	}
 
 	/**
 	 * Create an instance from a string.
 	 *
-	 * @param input
+	 * @param input0 -
+	 *   string to parse
+	 * @returns
+	 *   parsed host and port or `null`
 	 */
-	public static fromString(input: string): HostAndPort | null {
-		input = input.trim();
+	public static fromString(input0: string): HostAndPort | null {
+		const input = input0.trim();
 
 		if(input[0] === '[') {
 			// Assume IPv6

@@ -1,5 +1,6 @@
-import { ExpiringServiceDiscovery} from './ExpiringServiceDiscovery';
 import { Service } from '../Service';
+
+import { ExpiringServiceDiscovery } from './ExpiringServiceDiscovery';
 
 export interface TimedDiscoveryOptions {
 	/**
@@ -17,7 +18,7 @@ export interface TimedDiscoveryOptions {
 export abstract class TimedServiceDiscovery<S extends Service> extends ExpiringServiceDiscovery<S> {
 	private readonly searchInterval: any;
 
-	constructor(type: string, options: TimedDiscoveryOptions) {
+	public constructor(type: string, options: TimedDiscoveryOptions) {
 		super(type, options);
 
 		const searchTime = options.searchTime;

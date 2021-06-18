@@ -1,7 +1,8 @@
-import { AbstractServiceDiscovery } from './internal';
+import isEqual from 'fast-deep-equal';
+
 import { Service } from '../Service';
 
-import isEqual from 'fast-deep-equal';
+import { AbstractServiceDiscovery } from './internal';
 
 /**
  * Basic discovery intended for extension. This type of discovery provides
@@ -10,7 +11,7 @@ import isEqual from 'fast-deep-equal';
 export abstract class BasicServiceDiscovery<S extends Service> extends AbstractServiceDiscovery<S> {
 	private serviceMap: Map<string, S>;
 
-	constructor(type: string) {
+	public constructor(type: string) {
 		super(type);
 
 		this.serviceMap = new Map();
@@ -18,11 +19,22 @@ export abstract class BasicServiceDiscovery<S extends Service> extends AbstractS
 
 	/**
 	 * Get all the available services.
+	 *
+	 * @returns
+	 *   array with all services
 	 */
-	get services() {
+	public get services() {
 		return Array.from(this.serviceMap.values());
 	}
 
+	/**
+	 * Get a service based on an identifier.
+	 *
+	 * @param id -
+	 *   identifier of the service
+	 * @returns
+	 *   instance of service or `null`
+	 */
 	public get(id: string): S | null {
 		return this.serviceMap.get(id) || null;
 	}
@@ -30,7 +42,10 @@ export abstract class BasicServiceDiscovery<S extends Service> extends AbstractS
 	/**
 	 * Add or update a service that has been found.
 	 *
-	 * @param {object} service
+	 * @param service -
+	 *   service to update
+	 * @returns
+	 *   previous service or `null` if not registered
 	 */
 	protected updateService(service: S): S | null {
 		if(typeof service !== 'object' || service === null) {
@@ -72,6 +87,11 @@ export abstract class BasicServiceDiscovery<S extends Service> extends AbstractS
 
 	/**
 	 * Remove a service that is no longer available.
+	 *
+	 * @param service -
+	 *   service to remove
+	 * @returns
+	 *   previous service or `null` if not registered
 	 */
 	protected removeService(service: S | string): S | null {
 		if(typeof service === 'undefined' || service === null) return null;
@@ -96,8 +116,10 @@ export abstract class BasicServiceDiscovery<S extends Service> extends AbstractS
 	/**
 	 * Set the services that should be available.
 	 *
+	 * @param available -
+	 *   all of the available services
 	 */
-	protected setServices(available: Iterable<S>) {
+	protected setServices(available: Iterable<S>): void {
 		const ids = new Set();
 		for(const service of available) {
 			ids.add(service.id);

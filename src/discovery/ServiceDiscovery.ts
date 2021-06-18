@@ -1,7 +1,8 @@
 import { Subscribable } from 'atvik';
+
+import { AdvancedMapper, Mapper } from '../mapper';
 import { Service } from '../Service';
 import { ServicePredicate } from '../ServicePredicate';
-import { AdvancedMapper, Mapper } from '../mapper';
 
 /**
  * API for discovering different services using a variety of protocols. This
@@ -45,7 +46,8 @@ export interface ServiceDiscovery<S extends Service> {
 	 * Find the first service that match the given predicate. Will return
 	 * the service or `undefined`.
 	 *
-	 * @param predicate
+	 * @param predicate -
+	 *   predicate that service should match
 	 */
 	find(predicate: ServicePredicate<S>): S | null;
 
@@ -53,7 +55,8 @@ export interface ServiceDiscovery<S extends Service> {
 	 * Find all of the services that match the given predicate. Will return
 	 * an array with all of the matching services.
 	 *
-	 * @param predicate
+	 * @param predicate -
+	 *   predicate that services should match
 	 */
 	findAll(predicate: ServicePredicate<S>): S[];
 
@@ -65,7 +68,7 @@ export interface ServiceDiscovery<S extends Service> {
 	 * destroyed. Calling `destroy()` on this discovery will destroy the
 	 * filtered discovery.
 	 *
-	 * @param predicate
+	 * @param predicate -
 	 *   predicate used to filter items, if this function returns `true` the
 	 *   service will be available in the filtered results
 	 */
@@ -78,7 +81,7 @@ export interface ServiceDiscovery<S extends Service> {
 	 * destroyed. Calling `destroy()` on this discovery will destroy the
 	 * mapped discovery.
 	 *
-	 * @param mapper
+	 * @param mapper -
 	 */
 	map<O extends Service>(mapper: AdvancedMapper<S, O> | Mapper<S, O>): ServiceDiscovery<O>;
 
@@ -86,7 +89,7 @@ export interface ServiceDiscovery<S extends Service> {
 	 * Merge this discovery with another instance that provides compatible
 	 * services. Services will be merged using their `id`.
 	 *
-	 * @param other
+	 * @param other -
 	 */
 	and<O extends Service>(other: ServiceDiscovery<O>): ServiceDiscovery<S | O>;
 

@@ -1,8 +1,8 @@
 import { Service } from '../Service';
-import { ServiceDiscovery } from './ServiceDiscovery';
+import { ServicePredicate } from '../ServicePredicate';
 
 import { LayeredServiceDiscovery } from './internal';
-import { ServicePredicate } from '../ServicePredicate';
+import { ServiceDiscovery } from './ServiceDiscovery';
 
 /**
  * Provides filtering of any discovery instance.
@@ -10,7 +10,7 @@ import { ServicePredicate } from '../ServicePredicate';
 export class FilteredServiceDiscovery<S extends Service> extends LayeredServiceDiscovery<S, S> {
 	private predicate: ServicePredicate<S>;
 
-	constructor(
+	public constructor(
 		parent: ServiceDiscovery<S>,
 		predicate: ServicePredicate<S>
 	) {
@@ -19,10 +19,7 @@ export class FilteredServiceDiscovery<S extends Service> extends LayeredServiceD
 		this.predicate = predicate;
 	}
 
-	/**
-	 * Get all of the available services.
-	 */
-	get services() {
+	public get services(): S[] {
 		return this.parent.services
 			.filter(this.predicate);
 	}
@@ -44,7 +41,6 @@ export class FilteredServiceDiscovery<S extends Service> extends LayeredServiceD
 
 	protected handleParentServiceUnavailable(service: S) {
 		this.removeService(service);
-
 	}
 
 	protected handleParentServiceUpdate(service: S) {

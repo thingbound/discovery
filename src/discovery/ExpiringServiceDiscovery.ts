@@ -1,7 +1,8 @@
 import { ReschedulingTimerWheel } from 'timer-wheel';
 
-import { BasicServiceDiscovery } from './internal';
 import { Service } from '../Service';
+
+import { BasicServiceDiscovery } from './internal';
 
 /**
  * Options available when creating an expiring discovery.
@@ -24,7 +25,7 @@ export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicS
 	private readonly expirationWheel: ReschedulingTimerWheel<string>;
 	private expirationTimer: any;
 
-	constructor(type: string, options: ExpiringDiscoveryOptions) {
+	public constructor(type: string, options: ExpiringDiscoveryOptions) {
 		if(! options) {
 			throw new Error('options must be specified');
 		}

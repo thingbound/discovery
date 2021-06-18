@@ -1,38 +1,41 @@
-import { BasicServiceDiscovery } from './internal';
 import { Service } from '../Service';
+
+import { BasicServiceDiscovery } from './internal';
 
 /**
  * Discovery implementation for manually adding or removing available services.
  */
 export class ManualServiceDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
-
-	constructor(type='manual') {
+	public constructor(type = 'manual') {
 		super(type);
 	}
 
 	/**
 	 * Add a service that should be available.
 	 *
-	 * @param service
+	 * @param service -
+	 *   service that is either
 	 */
 	public add(service: S) {
-		return this.updateService(service);
+		this.updateService(service);
 	}
 
 	/**
 	 * Remove a service so that it is no longer available.
 	 *
-	 * @param service
+	 * @param service -
 	 */
 	public remove(service: S | string) {
-		return this.removeService(service);
+		this.removeService(service);
 	}
 
 	/**
+	 * Set the services that are available.
 	 *
-	 * @param services
+	 * @param services -
+	 *   services that should be available
 	 */
 	public set(services: Iterable<S>) {
-		return this.setServices(services);
+		this.setServices(services);
 	}
 }

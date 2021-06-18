@@ -1,8 +1,8 @@
+import { AdvancedMapper } from '../mapper';
 import { Service } from '../Service';
-import { ServiceDiscovery } from './ServiceDiscovery';
 
 import { LayeredServiceDiscovery } from './internal';
-import { AdvancedMapper } from '../mapper';
+import { ServiceDiscovery } from './ServiceDiscovery';
 
 /**
  * Information about a mapping. Used to keep track of the actually mapped
@@ -21,7 +21,7 @@ export class MappedServiceDiscovery<I extends Service, S extends Service> extend
 	private readonly mappedServices: Map<string, MappedService<S>>;
 	private readonly mapper: AdvancedMapper<I, S>;
 
-	constructor(parent: ServiceDiscovery<I>, mapper: AdvancedMapper<I, S>) {
+	public constructor(parent: ServiceDiscovery<I>, mapper: AdvancedMapper<I, S>) {
 		super('mapped', parent);
 
 		this.mappedServices = new Map();

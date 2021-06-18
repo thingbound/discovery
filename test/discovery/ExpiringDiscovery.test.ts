@@ -1,11 +1,9 @@
 import { ExpiringServiceDiscovery } from '../../src/discovery/ExpiringServiceDiscovery';
 import { Service } from '../../src/Service';
-
 import { TestService } from '../TestService';
 
 describe('Timed Discovery', function() {
-
-	it('single service is removed', function() {
+	it('single service is removed', async function() {
 		const d = new TestDiscovery<TestService>();
 
 		const service = new TestService('test:1', null);
@@ -16,10 +14,10 @@ describe('Timed Discovery', function() {
 		d.removeExpiredServices(2000);
 		expect(d.services).toEqual([ ]);
 
-		d.destroy();
+		await d.destroy();
 	});
 
-	it('single service is not removed', function() {
+	it('single service is not removed', async function() {
 		const d = new TestDiscovery<TestService>();
 
 		const service = new TestService('test:1', null);
@@ -34,10 +32,10 @@ describe('Timed Discovery', function() {
 
 		expect(d.services).toEqual([ service ]);
 
-		d.destroy();
+		await d.destroy();
 	});
 
-	it('multiples services are removed', function() {
+	it('multiples services are removed', async function() {
 		const d = new TestDiscovery<TestService>();
 
 		const s1 = new TestService('test:1', null);
@@ -50,10 +48,10 @@ describe('Timed Discovery', function() {
 		d.removeExpiredServices(2000);
 		expect(d.services).toEqual([ ]);
 
-		d.destroy();
+		await d.destroy();
 	});
 
-	it('multiples services with different times are removed', function() {
+	it('multiples services with different times are removed', async function() {
 		const d = new TestDiscovery<TestService>();
 
 		const s1 = new TestService('test:1', null);
@@ -67,13 +65,12 @@ describe('Timed Discovery', function() {
 		d.removeExpiredServices(10000);
 		expect(d.services).toEqual([ ]);
 
-		d.destroy();
+		await d.destroy();
 	});
 });
 
 class TestDiscovery<S extends Service> extends ExpiringServiceDiscovery<S> {
-
-	constructor() {
+	public constructor() {
 		super('test', {
 			expirationTime: 500
 		});

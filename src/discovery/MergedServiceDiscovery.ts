@@ -2,10 +2,9 @@ import { SubscriptionHandle } from 'atvik';
 
 import { Service } from '../Service';
 
-import { ServiceDiscovery } from './ServiceDiscovery';
-import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
-
 import { BasicServiceDiscovery } from './internal';
+import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
+import { ServiceDiscovery } from './ServiceDiscovery';
 
 interface ServiceData<S extends Service> {
 	services: S[];
@@ -23,12 +22,11 @@ interface Instance<S extends Service> {
  */
 export class MergedServiceDiscovery<S extends Service>
 	extends BasicServiceDiscovery<S>
-	implements ReleaseableServiceDiscovery<S>
-{
+	implements ReleaseableServiceDiscovery<S> {
 	private instances: Instance<S>[];
 	private combinedServiceData: Map<string, ServiceData<S>>;
 
-	constructor(discoveries: ServiceDiscovery<S>[]) {
+	public constructor(discoveries: ServiceDiscovery<S>[]) {
 		super('combined');
 
 		this.combinedServiceData = new Map();

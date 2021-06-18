@@ -1,5 +1,5 @@
-import debug from 'debug';
 import { Event } from 'atvik';
+import debug from 'debug';
 
 import { ServicePublisher } from './ServicePublisher';
 
@@ -16,20 +16,23 @@ export abstract class AbstractServicePublisher implements ServicePublisher {
 	 */
 	protected readonly errorEvent: Event<this, [ Error ]>;
 
-	constructor(type: string) {
-		this.debug = debug('th:discovery:publisher:' + type);
+	public constructor(type: string) {
+		this.debug = debug('discovery:publisher:' + type);
 
 		this.errorEvent = new Event(this);
 	}
 
-	get onError() {
+	public get onError() {
 		return this.errorEvent.subscribable;
 	}
 
 	/**
 	 * Log and emit an error for this discovery.
 	 *
-	 * @param error
+	 * @param error -
+	 *   error that occurred
+	 * @param message -
+	 *   message that should be logged for the error
 	 */
 	protected logAndEmitError(error: Error, message: string = 'An error occurred:') {
 		this.debug(message, error);

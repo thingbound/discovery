@@ -33,7 +33,10 @@ export interface AdvancedMapper<I, O> {
  * Function that can be used to check if something can be assumed to be an
  * advanced mapper.
  *
- * @param o
+ * @param o -
+ *   object to check
+ * @returns
+ *   if o is AdvancedMapper
  */
 export function isAdvancedMapper<I, O>(o: any): o is AdvancedMapper<I, O> {
 	return typeof o === 'object' && typeof o.create === 'function';

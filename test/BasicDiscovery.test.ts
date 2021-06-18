@@ -4,7 +4,6 @@ import { Service } from '../src/Service';
 import { TestService } from './TestService';
 
 describe('Basic Discovery', () => {
-
 	it('updateService handles initial add', () => {
 		const d = new TestDiscovery<TestService>();
 
@@ -55,7 +54,7 @@ describe('Basic Discovery', () => {
 		expect(gotAvailable).toEqual(true);
 
 		const s2 = new TestService('test:1', null);
-		d.updateService(new TestService('test:1', null));
+		d.updateService(s2);
 
 		expect(gotUpdate).toEqual(false);
 		expect(d.services[0]).toBe(s1);
@@ -77,8 +76,7 @@ describe('Basic Discovery', () => {
 });
 
 class TestDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
-
-	constructor() {
+	public constructor() {
 		super('test');
 	}
 
