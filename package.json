@@ -10,9 +10,8 @@
   "scripts": {
     "test": "jest",
     "apidocs": "typedoc",
-    "ci": "npm run coverage && npm run lint",
     "coverage": "jest --coverage",
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "eslint --ext .ts,.tsx src/ test/",
     "build": "tsc --module commonjs --outDir dist/cjs && tsc --module es6 --outDir dist/esm",
     "prebuild": "rimraf dist",
     "prepublishOnly": "npm run build"
@@ -32,10 +31,12 @@
     "timer-wheel": "^1.0.0"
   },
   "devDependencies": {
+    "@thingbound/eslint-config-typescript": "^1.0.0",
     "@types/debug": "^4.1.5",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.2",
     "coveralls": "^3.1.0",
+    "eslint": "^7.28.0",
     "jest": "^27.0.4",
     "jest-config": "^27.0.4",
     "rimraf": "^3.0.2",
