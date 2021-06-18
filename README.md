@@ -1,16 +1,15 @@
-# tinkerhub-discovery
+# @thingbound/discovery
 
 This library contains base classes for building and consuming service discovery
 mechanisms using JavaScript and TypeScript.
 
 It is intended to be used to implement some sort of discovery mechanism, such
-as those for [SSDP](https://github.com/tinkerhub/tinkerhub-ssdp) and
-[MDNS](https://github.com/tinkerhub/tinkerhub-mdns).
+as those for [MDNS](https://github.com/thingbound/discovery-mdns).
 
 The library is made available via NPM:
 
 ```
-npm install tinkerhub-discovery
+npm install @thingbound/discovery
 ```
 
 ## API
@@ -118,7 +117,7 @@ service seen will be returned for as long as it is valid.
 const discovery = firstDiscovery.and(secondDiscovery);
 
 // To combine more than two discoveries use `MergedDiscovery` directly
-import { MergedDiscovery } from 'tinkerhub-discovery';
+import { MergedDiscovery } from '@thingbound/discovery';
 new MergedDiscovery([ firstDiscovery, secondDiscovery, thirdDiscovery ]);
 
 // Destroy the discovery and the merged discoveries
@@ -135,7 +134,7 @@ specific API for a service, like this example that looks for Philips Hue
 bridges:
 
 ```typescript
-import { SSDPDiscovery } from 'tinkerhub-ssdp';
+import { SSDPDiscovery } from '@thingbound/discovery-ssdp';
 
 const discovery = new SSDPDiscovery()
   .filter(service => service.headers['HUE-BRIDGEID'])
@@ -153,7 +152,7 @@ If you have a need to keep a manually updated list of services, it's possible
 to create an instance of `ManualDiscovery` and add/remove services as needed:
 
 ```typescript
-import { ManualServiceDiscovery } from 'tinkerhub-discovery';
+import { ManualServiceDiscovery } from '@thingbound/discovery';
 
 const discovery = new ManualServiceDiscovery<ServiceType>();
 
@@ -180,7 +179,7 @@ packets and just adds them as services:
 
 ```javascript
 const dgram = require('dgram');
-const { BasicServiceDiscovery } = require('tinkerhub-discovery');
+const { BasicServiceDiscovery } = require('@thingbound/discovery');
 
 class CustomDiscovery extends BasicServiceDiscovery {
   constructor() {
@@ -218,7 +217,7 @@ on when they were last seen:
 
 ```javascript
 const dgram = require('dgram');
-const { ExpiringServiceDiscovery } = require('tinkerhub-discovery');
+const { ExpiringServiceDiscovery } = require('@thingbound/discovery');
 
 class CustomDiscovery extends ExpiringServiceDiscovery {
   constructor() {

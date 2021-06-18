@@ -1,9 +1,9 @@
 {
-  "name": "tinkerhub-discovery",
+  "name": "@thingbound/discovery",
   "version": "0.6.0",
   "license": "MIT",
   "description": "Standardized API for service discovery and publishing",
-  "repository": "tinkerhub/tinkerhub-discovery",
+  "repository": "thingbound/discovery",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
