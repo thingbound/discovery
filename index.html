@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>tinkerhub-discovery</title>
-	<meta name="description" content="Documentation for tinkerhub-discovery">
+	<title>@thingbound/discovery</title>
+	<meta name="description" content="Documentation for @thingbound/discovery">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">tinkerhub-discovery</a>
+					<a href="index.html" class="title">@thingbound/discovery</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>tinkerhub-discovery</h1>
+			<h1>@thingbound/discovery</h1>
 		</div>
 	</div>
 </header>
@@ -58,16 +58,15 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#tinkerhub-discovery" id="tinkerhub-discovery" style="color: inherit; text-decoration: none;">
-					<h1>tinkerhub-discovery</h1>
+				<a href="#thingbounddiscovery" id="thingbounddiscovery" style="color: inherit; text-decoration: none;">
+					<h1>@thingbound/discovery</h1>
 				</a>
 				<p>This library contains base classes for building and consuming service discovery
 				mechanisms using JavaScript and TypeScript.</p>
 				<p>It is intended to be used to implement some sort of discovery mechanism, such
-					as those for <a href="https://github.com/tinkerhub/tinkerhub-ssdp">SSDP</a> and
-				<a href="https://github.com/tinkerhub/tinkerhub-mdns">MDNS</a>.</p>
+				as those for <a href="https://github.com/thingbound/discovery-mdns">MDNS</a>.</p>
 				<p>The library is made available via NPM:</p>
-				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> </span><span style="color: #001080">tinkerhub</span><span style="color: #000000">-</span><span style="color: #001080">discovery</span>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> @</span><span style="color: #001080">thingbound</span><span style="color: #000000">/</span><span style="color: #001080">discovery</span>
 </code></pre>
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
@@ -161,7 +160,7 @@
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #001080">firstDiscovery</span><span style="color: #000000">.</span><span style="color: #795E26">and</span><span style="color: #000000">(</span><span style="color: #001080">secondDiscovery</span><span style="color: #000000">);</span>
 
 <span style="color: #008000">// To combine more than two discoveries use `MergedDiscovery` directly</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">MergedDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;tinkerhub-discovery&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">MergedDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">;</span>
 <span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">MergedDiscovery</span><span style="color: #000000">([ </span><span style="color: #001080">firstDiscovery</span><span style="color: #000000">, </span><span style="color: #001080">secondDiscovery</span><span style="color: #000000">, </span><span style="color: #001080">thirdDiscovery</span><span style="color: #000000"> ]);</span>
 
 <span style="color: #008000">// Destroy the discovery and the merged discoveries</span>
@@ -176,7 +175,7 @@
 				<p>Combining filtering and mapping can make it easy to find and create a more
 					specific API for a service, like this example that looks for Philips Hue
 				bridges:</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">SSDPDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;tinkerhub-ssdp&#039;</span><span style="color: #000000">;</span>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">SSDPDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@thingbound/discovery-ssdp&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">SSDPDiscovery</span><span style="color: #000000">()</span>
 <span style="color: #000000">  .</span><span style="color: #795E26">filter</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">service</span><span style="color: #000000">.</span><span style="color: #001080">headers</span><span style="color: #000000">[</span><span style="color: #A31515">&#039;HUE-BRIDGEID&#039;</span><span style="color: #000000">])</span>
@@ -192,7 +191,7 @@
 				</a>
 				<p>If you have a need to keep a manually updated list of services, it&#39;s possible
 				to create an instance of <code>ManualDiscovery</code> and add/remove services as needed:</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">ManualServiceDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;tinkerhub-discovery&#039;</span><span style="color: #000000">;</span>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">ManualServiceDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">ManualServiceDiscovery</span><span style="color: #000000">&lt;</span><span style="color: #267F99">ServiceType</span><span style="color: #000000">&gt;();</span>
 
@@ -217,7 +216,7 @@
 				<p>A very basic example would be this discovery that listens for incoming UDP
 				packets and just adds them as services:</p>
 				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">dgram</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;dgram&#039;</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">BasicServiceDiscovery</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;tinkerhub-discovery&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">BasicServiceDiscovery</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">CustomDiscovery</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">BasicServiceDiscovery</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #0000FF">constructor</span><span style="color: #000000">() {</span>
@@ -252,7 +251,7 @@
 					<code>ExpiringServiceDiscovery</code> would activate time based and remove services based
 				on when they were last seen:</p>
 				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">dgram</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;dgram&#039;</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">ExpiringServiceDiscovery</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;tinkerhub-discovery&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">ExpiringServiceDiscovery</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">CustomDiscovery</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">ExpiringServiceDiscovery</span><span style="color: #000000"> {</span>
 <span style="color: #000000">  </span><span style="color: #0000FF">constructor</span><span style="color: #000000">() {</span>
