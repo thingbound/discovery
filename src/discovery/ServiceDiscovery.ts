@@ -14,22 +14,22 @@ export interface ServiceDiscovery<S extends Service> {
 	/**
 	 * Event emitted when an error occurs for this discovery.
 	 */
-	readonly onError: Subscribable<this, [ Error ]>;
+	readonly onError: Subscribable<this, [ err: Error ]>;
 
 	/**
 	 * Event emitted whenever a service is detected as available.
 	 */
-	readonly onAvailable: Subscribable<this, [ S ]>;
+	readonly onAvailable: Subscribable<this, [ service: S ]>;
 
 	/**
 	 * Event emitted whenever a service is detected to be unavailable.
 	 */
-	readonly onUnavailable: Subscribable<this, [ S ]>;
+	readonly onUnavailable: Subscribable<this, [ service: S ]>;
 
 	/**
 	 * Event emitted when a service is available and is updated.
 	 */
-	readonly onUpdate: Subscribable<this, [ S, S ]>;
+	readonly onUpdate: Subscribable<this, [ service: S, previousVersion: S ]>;
 
 	/**
 	 * Get a copy of the current services.

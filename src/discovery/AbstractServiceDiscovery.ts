@@ -19,25 +19,25 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 	/**
 	 * Event used to emit errors for this discovery.
 	 */
-	private readonly errorEvent: Event<this, [ Error ]>;
+	private readonly errorEvent: Event<this, [ err: Error ]>;
 
 	/**
 	 * Event used to emit when a service is available.
 	 */
-	protected readonly availableEvent: Event<this, [ S ]>;
+	protected readonly availableEvent: Event<this, [ service: S ]>;
 	/**
 	 * Event used to emit when a service is no longer available.
 	 */
-	protected readonly unavailableEvent: Event<this, [ S ]>;
+	protected readonly unavailableEvent: Event<this, [ service: S ]>;
 	/**
 	 * Event used to emit when a service has been updated.
 	 */
-	protected readonly updateEvent: Event<this, [ S, S ]>;
+	protected readonly updateEvent: Event<this, [ service: S, previousService: S ]>;
 
 	/**
 	 * Services that are available from this discovery.
 	 */
-	public abstract services: S[];
+	public abstract readonly services: S[];
 
 	/**
 	 * Get if this discovery has been destroyed.
