@@ -70,9 +70,9 @@ export abstract class AbstractServiceDiscovery<S extends Service> implements Ser
 	 * @param error -
 	 * @param message -
 	 */
-	protected logAndEmitError(error: Error, message: string = 'An error occurred:') {
+	protected logAndEmitError(error: unknown, message: string = 'An error occurred:') {
 		this.debug(message, error);
-		this.errorEvent.emit(error);
+		this.errorEvent.emit(error instanceof Error ? error : new Error(String(error)));
 	}
 
 	public get onAvailable() {
