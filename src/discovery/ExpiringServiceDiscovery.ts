@@ -45,7 +45,7 @@ export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicS
 		const result = super.updateService(service);
 
 		// Schedule or reschedule the expiration of this service
-		this.expirationWheel.schedule(service.id, expirationTime || this.expirationTime);
+		this.expirationWheel.schedule(service.id, expirationTime ?? this.expirationTime);
 
 		return result;
 	}
