@@ -1,6 +1,12 @@
 module.exports = {
-	transform: {
-		".(ts|tsx)": "ts-jest"
+	preset: 'ts-jest/presets/js-with-ts-esm',
+	globals: {
+		'ts-jest': {
+			useESM: true
+		}
+	},
+	moduleNameMapper: {
+		'^(\\.{1,2}/.*)\\.js$': '$1',
 	},
 	"testEnvironment": "node",
 	"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",

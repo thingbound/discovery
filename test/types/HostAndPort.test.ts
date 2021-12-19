@@ -1,4 +1,4 @@
-import { HostAndPort } from '../../src/types/HostAndPort';
+import { HostAndPort } from '../../src/types/HostAndPort.js';
 
 describe('HostAndPort', function() {
 	it('fromString([2001:db8::1]) => OK', function() {

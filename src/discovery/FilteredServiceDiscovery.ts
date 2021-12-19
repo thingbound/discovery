@@ -1,8 +1,8 @@
-import { Service } from '../Service';
-import { ServicePredicate } from '../ServicePredicate';
+import { Service } from '../Service.js';
+import { ServicePredicate } from '../ServicePredicate.js';
 
-import { LayeredServiceDiscovery } from './internal';
-import { ServiceDiscovery } from './ServiceDiscovery';
+import { LayeredServiceDiscovery } from './internal.js';
+import { ServiceDiscovery } from './ServiceDiscovery.js';
 
 /**
  * Provides filtering of any discovery instance.

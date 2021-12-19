@@ -1,3 +1,3 @@
-export * from './HostAndPort';
-export * from './SingleAddressService';
-export * from './MultiAddressService';
+export * from './HostAndPort.js';
+export * from './SingleAddressService.js';
+export * from './MultiAddressService.js';

@@ -1,8 +1,8 @@
 import isEqual from 'fast-deep-equal';
 
-import { Service } from '../Service';
+import { Service } from '../Service.js';
 
-import { AbstractServiceDiscovery } from './internal';
+import { AbstractServiceDiscovery } from './internal.js';
 
 /**
  * Basic discovery intended for extension. This type of discovery provides

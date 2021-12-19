@@ -1,6 +1,6 @@
-import { Service } from '../Service';
+import { Service } from '../Service.js';
 
-import { ExpiringServiceDiscovery } from './ExpiringServiceDiscovery';
+import { ExpiringServiceDiscovery } from './ExpiringServiceDiscovery.js';
 
 /**
  * Options available for {@link TimedDiscovery}.

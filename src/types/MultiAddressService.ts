@@ -1,6 +1,6 @@
-import { Service } from '../Service';
+import { Service } from '../Service.js';
 
-import { HostAndPort } from './HostAndPort';
+import { HostAndPort } from './HostAndPort.js';
 
 /**
  * Service that is tied to one or more network addresses.

@@ -1,9 +1,9 @@
-export * from './Service';
-export * from './ServicePredicate';
-export * from './mapper';
+export * from './Service.js';
+export * from './ServicePredicate.js';
+export * from './mapper.js';
 
-export * from './discovery';
+export * from './discovery/index.js';
 
-export * from './publishing';
+export * from './publishing/index.js';
 
-export * from './types';
+export * from './types/index.js';

@@ -1,7 +1,7 @@
 import { Event } from 'atvik';
 import debug from 'debug';
 
-import { ServicePublisher } from './ServicePublisher';
+import { ServicePublisher } from './ServicePublisher.js';
 
 /**
  * Abstract base class to simplify implementation of publishers.

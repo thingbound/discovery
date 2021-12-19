@@ -1,8 +1,8 @@
 import { Subscribable } from 'atvik';
 
-import { AdvancedMapper, Mapper } from '../mapper';
-import { Service } from '../Service';
-import { ServicePredicate } from '../ServicePredicate';
+import { AdvancedMapper, Mapper } from '../mapper.js';
+import { Service } from '../Service.js';
+import { ServicePredicate } from '../ServicePredicate.js';
 
 /**
  * API for discovering different services using a variety of protocols. This

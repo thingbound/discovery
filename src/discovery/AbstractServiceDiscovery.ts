@@ -1,12 +1,12 @@
 import { Event } from 'atvik';
 import debug from 'debug';
 
-import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper';
-import { Service } from '../Service';
-import { ServicePredicate } from '../ServicePredicate';
+import { AdvancedMapper, Mapper, isAdvancedMapper } from '../mapper.js';
+import { Service } from '../Service.js';
+import { ServicePredicate } from '../ServicePredicate.js';
 
-import { FilteredServiceDiscovery, MappedServiceDiscovery, MergedServiceDiscovery } from './internal';
-import { ServiceDiscovery } from './ServiceDiscovery';
+import { FilteredServiceDiscovery, MappedServiceDiscovery, MergedServiceDiscovery } from './internal.js';
+import { ServiceDiscovery } from './ServiceDiscovery.js';
 
 /**
  * Abstract service discovery implementation.

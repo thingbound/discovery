@@ -1,13 +1,13 @@
-export * from './ServiceDiscovery';
-export * from './ReleasableServiceDiscovery';
+export * from './ServiceDiscovery.js';
+export * from './ReleasableServiceDiscovery.js';
 
 export {
 	AbstractServiceDiscovery,
 	BasicServiceDiscovery,
 	LayeredServiceDiscovery,
 	MergedServiceDiscovery
-} from './internal';
+} from './internal.js';
 
-export * from './ExpiringServiceDiscovery';
-export * from './TimedServiceDiscovery';
-export * from './ManualServiceDiscovery';
+export * from './ExpiringServiceDiscovery.js';
+export * from './TimedServiceDiscovery.js';
+export * from './ManualServiceDiscovery.js';

@@ -1,8 +1,8 @@
-import { Service } from '../Service';
+import { Service } from '../Service.js';
 
-import { BasicServiceDiscovery } from './internal';
-import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
-import { ServiceDiscovery } from './ServiceDiscovery';
+import { BasicServiceDiscovery } from './internal.js';
+import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery.js';
+import { ServiceDiscovery } from './ServiceDiscovery.js';
 
 /**
  * Abstract discovery for implementing layers, such as filtering and mapping.

@@ -4,5 +4,8 @@ module.exports = {
 	},
 	extends: [
 		'@thingbound/eslint-config-typescript'
-	]
+	],
+	rules: {
+		'import/extensions': [ 'error', 'always' ],
+	}
 }

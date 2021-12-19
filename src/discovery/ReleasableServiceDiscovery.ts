@@ -1,6 +1,6 @@
-import { Service } from '../Service';
+import { Service } from '../Service.js';
 
-import { ServiceDiscovery } from './ServiceDiscovery';
+import { ServiceDiscovery } from './ServiceDiscovery.js';
 
 /**
  * Extension to `ServiceDiscovery` that supports releasing its resources.

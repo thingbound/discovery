@@ -1,6 +1,6 @@
-import { Service } from '../Service';
+import { Service } from '../Service.js';
 
-import { BasicServiceDiscovery } from './internal';
+import { BasicServiceDiscovery } from './internal.js';
 
 /**
  * Discovery implementation for manually adding or removing available services.

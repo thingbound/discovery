@@ -1,7 +1,7 @@
-import { BasicServiceDiscovery } from '../src/discovery/internal';
-import { Service } from '../src/Service';
+import { BasicServiceDiscovery } from '../src/discovery/internal.js';
+import { Service } from '../src/Service.js';
 
-import { TestService } from './TestService';
+import { TestService } from './TestService.js';
 
 describe('Basic Discovery', () => {
 	it('updateService handles initial add', () => {

@@ -1,6 +1,6 @@
-import { v6 } from 'ip-regex';
+import ipRegex from 'ip-regex';
 
-const IPv6 = v6({ exact: true });
+const IPv6 = ipRegex.v6({ exact: true });
 
 /**
  * Representation of a host and a port. Supports some basic parsing via

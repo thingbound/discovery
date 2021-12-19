@@ -1,8 +1,8 @@
-import { AdvancedMapper } from '../mapper';
-import { Service } from '../Service';
+import { AdvancedMapper } from '../mapper.js';
+import { Service } from '../Service.js';
 
-import { LayeredServiceDiscovery } from './internal';
-import { ServiceDiscovery } from './ServiceDiscovery';
+import { LayeredServiceDiscovery } from './internal.js';
+import { ServiceDiscovery } from './ServiceDiscovery.js';
 
 /**
  * Information about a mapping. Used to keep track of the actually mapped

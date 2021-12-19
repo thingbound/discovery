@@ -1,2 +1,2 @@
-export * from './AbstractServicePublisher';
-export * from './ServicePublisher';
+export * from './AbstractServicePublisher.js';
+export * from './ServicePublisher.js';

@@ -1,6 +1,6 @@
-import { ExpiringServiceDiscovery } from '../../src/discovery/ExpiringServiceDiscovery';
-import { Service } from '../../src/Service';
-import { TestService } from '../TestService';
+import { ExpiringServiceDiscovery } from '../../src/discovery/ExpiringServiceDiscovery.js';
+import { Service } from '../../src/Service.js';
+import { TestService } from '../TestService.js';
 
 describe('ExpiringServiceDiscovery', function() {
 	it('single service is removed', async function() {
