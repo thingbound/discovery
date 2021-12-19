@@ -1,10 +1,7 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
-		"module": "commonjs",
-
 		"noEmit": true,
-
 		"baseUrl": ".",
 	},
 	"include": [ "src", "test" ],
