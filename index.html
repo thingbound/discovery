@@ -1,403 +1,94 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@thingbound/discovery</title>
-	<meta name="description" content="Documentation for @thingbound/discovery">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script async src="assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">@thingbound/discovery</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<h1>@thingbound/discovery</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#thingbounddiscovery" id="thingbounddiscovery" style="color: inherit; text-decoration: none;">
-					<h1>@thingbound/discovery</h1>
-				</a>
-				<p>This library contains base classes for building and consuming service discovery
-				mechanisms using JavaScript and TypeScript.</p>
-				<p>It is intended to be used to implement some sort of discovery mechanism, such
-				as those for <a href="https://github.com/thingbound/discovery-mdns">MDNS</a>.</p>
-				<p>The library is made available via NPM:</p>
-				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> @</span><span style="color: #001080">thingbound</span><span style="color: #000000">/</span><span style="color: #001080">discovery</span>
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@thingbound/discovery</title><meta name="description" content="Documentation for @thingbound/discovery"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@thingbound/discovery</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@thingbound/discovery</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#thingbounddiscovery" id="thingbounddiscovery" style="color: inherit; text-decoration: none;">
+  <h1>@thingbound/discovery</h1>
+</a>
+<p>This library contains base classes for building and consuming service discovery
+mechanisms using JavaScript and TypeScript.</p>
+<p>It is intended to be used to implement some sort of discovery mechanism, such
+as those for <a href="https://github.com/thingbound/discovery-mdns">MDNS</a>.</p>
+<p>The library is made available via NPM:</p>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> @</span><span class="hl-0">thingbound</span><span class="hl-1">/</span><span class="hl-0">discovery</span>
 </code></pre>
-				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
-					<h2>API</h2>
-				</a>
-				<p>The basic functionality of a discovery instance is exposed via the type
-				<code>ServiceDiscovery</code>:</p>
-				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">DiscoveryInstanceHere</span><span style="color: #000000">();</span>
 
-<span style="color: #008000">// Fetch services available</span>
-<span style="color: #AF00DB">for</span><span style="color: #000000">(</span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">service</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #001080">services</span><span style="color: #000000">) {</span>
-<span style="color: #000000">  </span><span style="color: #008000">// Do something with a service found</span>
-<span style="color: #000000">}</span>
-
-<span style="color: #008000">// Get or find services</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">viaId</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;idOfService&#039;</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">singleViaFilter</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">find</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* filter code here */</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">allViaFilter</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">find</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">service</span><span style="color: #000000">.</span><span style="color: #001080">someData</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;test&#039;</span><span style="color: #000000">);</span>
-
-<span style="color: #008000">// Listen to when services become available or unavailable</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">onAvailable</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* service is now available */</span><span style="color: #000000">);</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">onUnavailable</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* service is no longer available */</span><span style="color: #000000">);</span>
-
-<span style="color: #008000">// Some discoveries support updates</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">onUpdate</span><span style="color: #000000">((</span><span style="color: #001080">service</span><span style="color: #000000">, </span><span style="color: #001080">previousService</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* service has been updated */</span><span style="color: #000000">)</span>
-
-<span style="color: #008000">// When done using a discovery it should be destroyed</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
+<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+  <h2>API</h2>
+</a>
+<p>The basic functionality of a discovery instance is exposed via the type
+<code>ServiceDiscovery</code>:</p>
+<pre><code class="language-typescript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">discovery</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">DiscoveryInstanceHere</span><span class="hl-1">();</span><br/><br/><span class="hl-5">// Fetch services available</span><br/><span class="hl-6">for</span><span class="hl-1">(</span><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">service</span><span class="hl-1"> </span><span class="hl-2">of</span><span class="hl-1"> </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-0">services</span><span class="hl-1">) {</span><br/><span class="hl-1">  </span><span class="hl-5">// Do something with a service found</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-5">// Get or find services</span><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">viaId</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">get</span><span class="hl-1">(</span><span class="hl-7">&#39;idOfService&#39;</span><span class="hl-1">);</span><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">singleViaFilter</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">find</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* filter code here */</span><span class="hl-1">);</span><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">allViaFilter</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">find</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">service</span><span class="hl-1">.</span><span class="hl-0">someData</span><span class="hl-1"> === </span><span class="hl-7">&#39;test&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-5">// Listen to when services become available or unavailable</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">onAvailable</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* service is now available */</span><span class="hl-1">);</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">onUnavailable</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* service is no longer available */</span><span class="hl-1">);</span><br/><br/><span class="hl-5">// Some discoveries support updates</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">onUpdate</span><span class="hl-1">((</span><span class="hl-0">service</span><span class="hl-1">, </span><span class="hl-0">previousService</span><span class="hl-1">) </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* service has been updated */</span><span class="hl-1">)</span><br/><br/><span class="hl-5">// When done using a discovery it should be destroyed</span><br/><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span>
 </code></pre>
-				<a href="#filtered-mapping-and-merging-services" id="filtered-mapping-and-merging-services" style="color: inherit; text-decoration: none;">
-					<h2>Filtered, mapping and merging services</h2>
-				</a>
-				<a href="#filtering-services" id="filtering-services" style="color: inherit; text-decoration: none;">
-					<h3>Filtering services</h3>
-				</a>
-				<p>Discovery instances can be filtered, which provides a live filtered view that
-				supports events:</p>
-				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">filtered</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">filter</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* return true to include in filtered view */</span><span style="color: #000000">);</span>
 
-<span style="color: #008000">// Listen to events as with the main discovery instance</span>
-<span style="color: #001080">filtered</span><span style="color: #000000">.</span><span style="color: #795E26">onAvailable</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> ...);</span>
+<a href="#filtered-mapping-and-merging-services" id="filtered-mapping-and-merging-services" style="color: inherit; text-decoration: none;">
+  <h2>Filtered, mapping and merging services</h2>
+</a>
 
-<span style="color: #008000">// Destroy the filtered view and its parent</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">filtered</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
-
-<span style="color: #008000">// Alternative to destroy - release the view, but do not destroy the parent</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">filtered</span><span style="color: #000000">.</span><span style="color: #795E26">release</span><span style="color: #000000">();</span>
+<a href="#filtering-services" id="filtering-services" style="color: inherit; text-decoration: none;">
+  <h3>Filtering services</h3>
+</a>
+<p>Discovery instances can be filtered, which provides a live filtered view that
+supports events:</p>
+<pre><code class="language-typescript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">filtered</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">filter</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* return true to include in filtered view */</span><span class="hl-1">);</span><br/><br/><span class="hl-5">// Listen to events as with the main discovery instance</span><br/><span class="hl-0">filtered</span><span class="hl-1">.</span><span class="hl-4">onAvailable</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> ...);</span><br/><br/><span class="hl-5">// Destroy the filtered view and its parent</span><br/><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-0">filtered</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span><br/><br/><span class="hl-5">// Alternative to destroy - release the view, but do not destroy the parent</span><br/><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-0">filtered</span><span class="hl-1">.</span><span class="hl-4">release</span><span class="hl-1">();</span>
 </code></pre>
-				<a href="#mapping-services-into-more-specific-types" id="mapping-services-into-more-specific-types" style="color: inherit; text-decoration: none;">
-					<h3>Mapping services into more specific types</h3>
-				</a>
-				<p>Similar to filtering it is possible to map services into another object, as long
-				as the mapped object contains an identifier:</p>
-				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mapped</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">map</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">CustomService</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000">));</span>
+
+<a href="#mapping-services-into-more-specific-types" id="mapping-services-into-more-specific-types" style="color: inherit; text-decoration: none;">
+  <h3>Mapping services into more specific types</h3>
+</a>
+<p>Similar to filtering it is possible to map services into another object, as long
+as the mapped object contains an identifier:</p>
+<pre><code class="language-typescript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">mapped</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">map</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">CustomService</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1">));</span>
 </code></pre>
-				<p>Mapping supports returning promises to perform asynchronous functions during
-				mapping:</p>
-				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mapped</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">map</span><span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">loadService</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000">));</span>
+<p>Mapping supports returning promises to perform asynchronous functions during
+mapping:</p>
+<pre><code class="language-typescript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">mapped</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">map</span><span class="hl-1">(</span><span class="hl-2">async</span><span class="hl-1"> </span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-4">loadService</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1">));</span>
 </code></pre>
-				<p>Mappers may return <code>null</code> if they do not wish to map a service, in which case
-				the discovery acts as it was filtered out.</p>
-				<p>Mapping has an advanced mode where it&#39;s possible to optionally react to
-				updated and unavailable services:</p>
-				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">mapped</span><span style="color: #000000"> = </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">map</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #795E26">create</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">CustomService</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000">),</span>
-
-<span style="color: #000000">  </span><span style="color: #795E26">update</span><span style="color: #001080">:</span><span style="color: #000000"> ({ </span><span style="color: #001080">service</span><span style="color: #000000">, </span><span style="color: #001080">previousService</span><span style="color: #000000">, </span><span style="color: #001080">previousMappedService</span><span style="color: #000000"> }) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #008000">/*</span>
-<span style="color: #008000">     * `service` points to the updated service to map</span>
-<span style="color: #008000">     * `previousService` is the previous version of the service to map</span>
-<span style="color: #008000">     * `previousMappedService` is what `create` or `update` mapped to previously</span>
-<span style="color: #008000">     * </span>
-<span style="color: #008000">     * Either:</span>
-<span style="color: #008000">     * </span>
-<span style="color: #008000">     * 1) Return null/undefined to remove the service</span>
-<span style="color: #008000">     * 2) Return the previously mapped service</span>
-<span style="color: #008000">     * 3) Return a new mapped service</span>
-<span style="color: #008000">     * </span>
-<span style="color: #008000">     */</span>
-<span style="color: #000000">  },</span>
-
-<span style="color: #000000">  </span><span style="color: #795E26">destroy</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">mappedService</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* perform some destruction of the mapped service */</span>
-<span style="color: #000000">})</span>
+<p>Mappers may return <code>null</code> if they do not wish to map a service, in which case
+the discovery acts as it was filtered out.</p>
+<p>Mapping has an advanced mode where it&#39;s possible to optionally react to
+updated and unavailable services:</p>
+<pre><code class="language-typescript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">mapped</span><span class="hl-1"> = </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">map</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-4">create</span><span class="hl-0">:</span><span class="hl-1"> </span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">CustomService</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1">),</span><br/><br/><span class="hl-1">  </span><span class="hl-4">update</span><span class="hl-0">:</span><span class="hl-1"> ({ </span><span class="hl-0">service</span><span class="hl-1">, </span><span class="hl-0">previousService</span><span class="hl-1">, </span><span class="hl-0">previousMappedService</span><span class="hl-1"> }) </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-5">/*</span><br/><span class="hl-5">     * `service` points to the updated service to map</span><br/><span class="hl-5">     * `previousService` is the previous version of the service to map</span><br/><span class="hl-5">     * `previousMappedService` is what `create` or `update` mapped to previously</span><br/><span class="hl-5">     * </span><br/><span class="hl-5">     * Either:</span><br/><span class="hl-5">     * </span><br/><span class="hl-5">     * 1) Return null/undefined to remove the service</span><br/><span class="hl-5">     * 2) Return the previously mapped service</span><br/><span class="hl-5">     * 3) Return a new mapped service</span><br/><span class="hl-5">     * </span><br/><span class="hl-5">     */</span><br/><span class="hl-1">  },</span><br/><br/><span class="hl-1">  </span><span class="hl-4">destroy</span><span class="hl-0">:</span><span class="hl-1"> </span><span class="hl-0">mappedService</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* perform some destruction of the mapped service */</span><br/><span class="hl-1">})</span>
 </code></pre>
-				<a href="#merging-services-from-multiple-discoveries" id="merging-services-from-multiple-discoveries" style="color: inherit; text-decoration: none;">
-					<h3>Merging services from multiple discoveries</h3>
-				</a>
-				<p>It&#39;s possible to create a merged view that returns services from multiple
-					discoveries. Such services will be merged using their identifier and the first
-				service seen will be returned for as long as it is valid.</p>
-				<pre><code class="language-typescript"><span style="color: #008000">// Merge two discoveries together</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #001080">firstDiscovery</span><span style="color: #000000">.</span><span style="color: #795E26">and</span><span style="color: #000000">(</span><span style="color: #001080">secondDiscovery</span><span style="color: #000000">);</span>
 
-<span style="color: #008000">// To combine more than two discoveries use `MergedDiscovery` directly</span>
-<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">MergedDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">;</span>
-<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">MergedDiscovery</span><span style="color: #000000">([ </span><span style="color: #001080">firstDiscovery</span><span style="color: #000000">, </span><span style="color: #001080">secondDiscovery</span><span style="color: #000000">, </span><span style="color: #001080">thirdDiscovery</span><span style="color: #000000"> ]);</span>
-
-<span style="color: #008000">// Destroy the discovery and the merged discoveries</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
-
-<span style="color: #008000">// Release this discovery without destroying the merged discoveries</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">release</span><span style="color: #000000">();</span>
+<a href="#merging-services-from-multiple-discoveries" id="merging-services-from-multiple-discoveries" style="color: inherit; text-decoration: none;">
+  <h3>Merging services from multiple discoveries</h3>
+</a>
+<p>It&#39;s possible to create a merged view that returns services from multiple
+discoveries. Such services will be merged using their identifier and the first
+service seen will be returned for as long as it is valid.</p>
+<pre><code class="language-typescript"><span class="hl-5">// Merge two discoveries together</span><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">discovery</span><span class="hl-1"> = </span><span class="hl-0">firstDiscovery</span><span class="hl-1">.</span><span class="hl-4">and</span><span class="hl-1">(</span><span class="hl-0">secondDiscovery</span><span class="hl-1">);</span><br/><br/><span class="hl-5">// To combine more than two discoveries use `MergedDiscovery` directly</span><br/><span class="hl-6">import</span><span class="hl-1"> { </span><span class="hl-0">MergedDiscovery</span><span class="hl-1"> } </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-7">&#39;@thingbound/discovery&#39;</span><span class="hl-1">;</span><br/><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">MergedDiscovery</span><span class="hl-1">([ </span><span class="hl-0">firstDiscovery</span><span class="hl-1">, </span><span class="hl-0">secondDiscovery</span><span class="hl-1">, </span><span class="hl-0">thirdDiscovery</span><span class="hl-1"> ]);</span><br/><br/><span class="hl-5">// Destroy the discovery and the merged discoveries</span><br/><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span><br/><br/><span class="hl-5">// Release this discovery without destroying the merged discoveries</span><br/><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">release</span><span class="hl-1">();</span>
 </code></pre>
-				<a href="#combining-filtering-and-mapping" id="combining-filtering-and-mapping" style="color: inherit; text-decoration: none;">
-					<h3>Combining filtering and mapping</h3>
-				</a>
-				<p>Combining filtering and mapping can make it easy to find and create a more
-					specific API for a service, like this example that looks for Philips Hue
-				bridges:</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">SSDPDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@thingbound/discovery-ssdp&#039;</span><span style="color: #000000">;</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">SSDPDiscovery</span><span style="color: #000000">()</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">filter</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">service</span><span style="color: #000000">.</span><span style="color: #001080">headers</span><span style="color: #000000">[</span><span style="color: #A31515">&#039;HUE-BRIDGEID&#039;</span><span style="color: #000000">])</span>
-<span style="color: #000000">  .</span><span style="color: #795E26">map</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">HueBridge</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000">));</span>
-
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">onAvailable</span><span style="color: #000000">(</span><span style="color: #001080">hueBridge</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #008000">/* instance of HueBridge is available */</span><span style="color: #000000">);</span>
-
-<span style="color: #008000">// To shutdown discovery (will destroy the root discovery, the filtered and mapped view)</span>
-<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
+<a href="#combining-filtering-and-mapping" id="combining-filtering-and-mapping" style="color: inherit; text-decoration: none;">
+  <h3>Combining filtering and mapping</h3>
+</a>
+<p>Combining filtering and mapping can make it easy to find and create a more
+specific API for a service, like this example that looks for Philips Hue
+bridges:</p>
+<pre><code class="language-typescript"><span class="hl-6">import</span><span class="hl-1"> { </span><span class="hl-0">SSDPDiscovery</span><span class="hl-1"> } </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-7">&#39;@thingbound/discovery-ssdp&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">discovery</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">SSDPDiscovery</span><span class="hl-1">()</span><br/><span class="hl-1">  .</span><span class="hl-4">filter</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-0">service</span><span class="hl-1">.</span><span class="hl-0">headers</span><span class="hl-1">[</span><span class="hl-7">&#39;HUE-BRIDGEID&#39;</span><span class="hl-1">])</span><br/><span class="hl-1">  .</span><span class="hl-4">map</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">HueBridge</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1">));</span><br/><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">onAvailable</span><span class="hl-1">(</span><span class="hl-0">hueBridge</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> </span><span class="hl-5">/* instance of HueBridge is available */</span><span class="hl-1">);</span><br/><br/><span class="hl-5">// To shutdown discovery (will destroy the root discovery, the filtered and mapped view)</span><br/><span class="hl-6">await</span><span class="hl-1"> </span><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span>
 </code></pre>
-				<a href="#manual-discovery" id="manual-discovery" style="color: inherit; text-decoration: none;">
-					<h2>Manual discovery</h2>
-				</a>
-				<p>If you have a need to keep a manually updated list of services, it&#39;s possible
-				to create an instance of <code>ManualDiscovery</code> and add/remove services as needed:</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">ManualServiceDiscovery</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">;</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">discovery</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">ManualServiceDiscovery</span><span style="color: #000000">&lt;</span><span style="color: #267F99">ServiceType</span><span style="color: #000000">&gt;();</span>
-
-<span style="color: #008000">// Add services</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">ServiceType</span><span style="color: #000000">(...));</span>
-
-<span style="color: #008000">// Remove services</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">remove</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;idOfService&#039;</span><span style="color: #000000">);</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">remove</span><span style="color: #000000">(</span><span style="color: #001080">serviceInstance</span><span style="color: #000000">);</span>
-
-<span style="color: #008000">// Set the exact services available</span>
-<span style="color: #001080">discovery</span><span style="color: #000000">.</span><span style="color: #795E26">set</span><span style="color: #000000">([ </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">ServiceType</span><span style="color: #000000">(...) ]);</span>
+<a href="#manual-discovery" id="manual-discovery" style="color: inherit; text-decoration: none;">
+  <h2>Manual discovery</h2>
+</a>
+<p>If you have a need to keep a manually updated list of services, it&#39;s possible
+to create an instance of <code>ManualDiscovery</code> and add/remove services as needed:</p>
+<pre><code class="language-typescript"><span class="hl-6">import</span><span class="hl-1"> { </span><span class="hl-0">ManualServiceDiscovery</span><span class="hl-1"> } </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-7">&#39;@thingbound/discovery&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">discovery</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">ManualServiceDiscovery</span><span class="hl-1">&lt;</span><span class="hl-8">ServiceType</span><span class="hl-1">&gt;();</span><br/><br/><span class="hl-5">// Add services</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">add</span><span class="hl-1">(</span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">ServiceType</span><span class="hl-1">(...));</span><br/><br/><span class="hl-5">// Remove services</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">remove</span><span class="hl-1">(</span><span class="hl-7">&#39;idOfService&#39;</span><span class="hl-1">);</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">remove</span><span class="hl-1">(</span><span class="hl-0">serviceInstance</span><span class="hl-1">);</span><br/><br/><span class="hl-5">// Set the exact services available</span><br/><span class="hl-0">discovery</span><span class="hl-1">.</span><span class="hl-4">set</span><span class="hl-1">([ </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-4">ServiceType</span><span class="hl-1">(...) ]);</span>
 </code></pre>
-				<a href="#building-a-custom-discovery" id="building-a-custom-discovery" style="color: inherit; text-decoration: none;">
-					<h2>Building a custom discovery</h2>
-				</a>
-				<p>There are a few ways to build a custom discovery, with the two main ways being:</p>
-				<ul>
-					<li>Event-based discovery, services are added or removed when changed</li>
-					<li>Sync-based discovery, services are discovered in bulk </li>
-				</ul>
-				<p>A very basic example would be this discovery that listens for incoming UDP
-				packets and just adds them as services:</p>
-				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">dgram</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;dgram&#039;</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">BasicServiceDiscovery</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">);</span>
 
-<span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">CustomDiscovery</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">BasicServiceDiscovery</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">constructor</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">super</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;custom&#039;</span><span style="color: #000000">);</span>
-
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000"> = </span><span style="color: #001080">dgram</span><span style="color: #000000">.</span><span style="color: #795E26">createSocket</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;udp4&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">();</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #098658">12345</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;224.1.1.1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;listening&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">addMembership</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;224.1.1.1&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">setBroadcast</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
-<span style="color: #000000">    });</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;message&#039;</span><span style="color: #000000">, </span><span style="color: #001080">msg</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">      </span><span style="color: #008000">// Parse incoming message here</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">service</span><span style="color: #000000"> = {</span>
-<span style="color: #000000">        </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #795E26">extractSomeSortOfId</span><span style="color: #000000">(</span><span style="color: #001080">msg</span><span style="color: #000000">),</span>
-<span style="color: #000000">        </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #001080">msg</span>
-<span style="color: #000000">      };</span>
-
-<span style="color: #000000">      </span><span style="color: #008000">// Add it to the list of services</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #795E26">updateService</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000">);</span>
-<span style="color: #000000">    });</span>
-<span style="color: #000000">  }</span>
-
-<span style="color: #000000">  </span><span style="color: #795E26">destroy</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
-
-<span style="color: #000000">    </span><span style="color: #0000FF">super</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">}</span>
+<a href="#building-a-custom-discovery" id="building-a-custom-discovery" style="color: inherit; text-decoration: none;">
+  <h2>Building a custom discovery</h2>
+</a>
+<p>There are a few ways to build a custom discovery, with the two main ways being:</p>
+<ul>
+<li>Event-based discovery, services are added or removed when changed</li>
+<li>Sync-based discovery, services are discovered in bulk</li>
+</ul>
+<p>A very basic example would be this discovery that listens for incoming UDP
+packets and just adds them as services:</p>
+<pre><code class="language-javascript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">dgram</span><span class="hl-1"> = </span><span class="hl-4">require</span><span class="hl-1">(</span><span class="hl-7">&#39;dgram&#39;</span><span class="hl-1">);</span><br/><span class="hl-2">const</span><span class="hl-1"> { </span><span class="hl-3">BasicServiceDiscovery</span><span class="hl-1"> } = </span><span class="hl-4">require</span><span class="hl-1">(</span><span class="hl-7">&#39;@thingbound/discovery&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-2">class</span><span class="hl-1"> </span><span class="hl-8">CustomDiscovery</span><span class="hl-1"> </span><span class="hl-2">extends</span><span class="hl-1"> </span><span class="hl-8">BasicServiceDiscovery</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-2">constructor</span><span class="hl-1">() {</span><br/><span class="hl-1">    </span><span class="hl-2">super</span><span class="hl-1">(</span><span class="hl-7">&#39;custom&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1"> = </span><span class="hl-0">dgram</span><span class="hl-1">.</span><span class="hl-4">createSocket</span><span class="hl-1">(</span><span class="hl-7">&#39;udp4&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">bind</span><span class="hl-1">();</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">on</span><span class="hl-1">(</span><span class="hl-9">12345</span><span class="hl-1">, </span><span class="hl-7">&#39;224.1.1.1&#39;</span><span class="hl-1">, </span><span class="hl-7">&#39;listening&#39;</span><span class="hl-1">, () </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">addMembership</span><span class="hl-1">(</span><span class="hl-7">&#39;224.1.1.1&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">      </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">setBroadcast</span><span class="hl-1">(</span><span class="hl-2">true</span><span class="hl-1">);</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">on</span><span class="hl-1">(</span><span class="hl-7">&#39;message&#39;</span><span class="hl-1">, </span><span class="hl-0">msg</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-5">// Parse incoming message here</span><br/><span class="hl-1">      </span><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">service</span><span class="hl-1"> = {</span><br/><span class="hl-1">        </span><span class="hl-0">id:</span><span class="hl-1"> </span><span class="hl-4">extractSomeSortOfId</span><span class="hl-1">(</span><span class="hl-0">msg</span><span class="hl-1">),</span><br/><span class="hl-1">        </span><span class="hl-0">message:</span><span class="hl-1"> </span><span class="hl-0">msg</span><br/><span class="hl-1">      };</span><br/><br/><span class="hl-1">      </span><span class="hl-5">// Add it to the list of services</span><br/><span class="hl-1">      </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-4">updateService</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1">);</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">  }</span><br/><br/><span class="hl-1">  </span><span class="hl-4">destroy</span><span class="hl-1">() {</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span><br/><br/><span class="hl-1">    </span><span class="hl-2">super</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
 </code></pre>
-				<p>The above discovery would never remove any services, but extending
-					<code>ExpiringServiceDiscovery</code> would activate time based and remove services based
-				on when they were last seen:</p>
-				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">dgram</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;dgram&#039;</span><span style="color: #000000">);</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">ExpiringServiceDiscovery</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@thingbound/discovery&#039;</span><span style="color: #000000">);</span>
-
-<span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">CustomDiscovery</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">ExpiringServiceDiscovery</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">constructor</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">super</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;custom&#039;</span><span style="color: #000000">, {</span>
-<span style="color: #000000">      </span><span style="color: #001080">expirationTime:</span><span style="color: #000000"> </span><span style="color: #098658">60</span><span style="color: #000000">*</span><span style="color: #098658">1000</span><span style="color: #000000"> </span><span style="color: #008000">/* milliseconds */</span>
-<span style="color: #000000">    });</span>
-
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000"> = </span><span style="color: #001080">dgram</span><span style="color: #000000">.</span><span style="color: #795E26">createSocket</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;udp4&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">bind</span><span style="color: #000000">();</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #098658">12345</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;224.1.1.1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;listening&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">addMembership</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;224.1.1.1&#039;</span><span style="color: #000000">);</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">setBroadcast</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
-<span style="color: #000000">    });</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;message&#039;</span><span style="color: #000000">, </span><span style="color: #001080">msg</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">      </span><span style="color: #008000">// Parse incoming message here</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">service</span><span style="color: #000000"> = {</span>
-<span style="color: #000000">        </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #795E26">extractSomeSortOfId</span><span style="color: #000000">(</span><span style="color: #001080">msg</span><span style="color: #000000">),</span>
-<span style="color: #000000">        </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #001080">msg</span>
-<span style="color: #000000">      };</span>
-
-<span style="color: #000000">      </span><span style="color: #008000">// Add it to the list of services</span>
-<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #795E26">updateService</span><span style="color: #000000">(</span><span style="color: #001080">service</span><span style="color: #000000">);</span>
-<span style="color: #000000">    });</span>
-<span style="color: #000000">  }</span>
-
-<span style="color: #000000">  </span><span style="color: #795E26">destroy</span><span style="color: #000000">() {</span>
-<span style="color: #000000">    </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">socket</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
-
-<span style="color: #000000">    </span><span style="color: #0000FF">super</span><span style="color: #000000">.</span><span style="color: #795E26">destroy</span><span style="color: #000000">();</span>
-<span style="color: #000000">  }</span>
-<span style="color: #000000">}</span>
+<p>The above discovery would never remove any services, but extending
+<code>ExpiringServiceDiscovery</code> would activate time based and remove services based 
+on when they were last seen:</p>
+<pre><code class="language-javascript"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">dgram</span><span class="hl-1"> = </span><span class="hl-4">require</span><span class="hl-1">(</span><span class="hl-7">&#39;dgram&#39;</span><span class="hl-1">);</span><br/><span class="hl-2">const</span><span class="hl-1"> { </span><span class="hl-3">ExpiringServiceDiscovery</span><span class="hl-1"> } = </span><span class="hl-4">require</span><span class="hl-1">(</span><span class="hl-7">&#39;@thingbound/discovery&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-2">class</span><span class="hl-1"> </span><span class="hl-8">CustomDiscovery</span><span class="hl-1"> </span><span class="hl-2">extends</span><span class="hl-1"> </span><span class="hl-8">ExpiringServiceDiscovery</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-2">constructor</span><span class="hl-1">() {</span><br/><span class="hl-1">    </span><span class="hl-2">super</span><span class="hl-1">(</span><span class="hl-7">&#39;custom&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">      </span><span class="hl-0">expirationTime:</span><span class="hl-1"> </span><span class="hl-9">60</span><span class="hl-1">*</span><span class="hl-9">1000</span><span class="hl-1"> </span><span class="hl-5">/* milliseconds */</span><br/><span class="hl-1">    });</span><br/><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1"> = </span><span class="hl-0">dgram</span><span class="hl-1">.</span><span class="hl-4">createSocket</span><span class="hl-1">(</span><span class="hl-7">&#39;udp4&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">bind</span><span class="hl-1">();</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">on</span><span class="hl-1">(</span><span class="hl-9">12345</span><span class="hl-1">, </span><span class="hl-7">&#39;224.1.1.1&#39;</span><span class="hl-1">, </span><span class="hl-7">&#39;listening&#39;</span><span class="hl-1">, () </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">addMembership</span><span class="hl-1">(</span><span class="hl-7">&#39;224.1.1.1&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">      </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">setBroadcast</span><span class="hl-1">(</span><span class="hl-2">true</span><span class="hl-1">);</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">on</span><span class="hl-1">(</span><span class="hl-7">&#39;message&#39;</span><span class="hl-1">, </span><span class="hl-0">msg</span><span class="hl-1"> </span><span class="hl-2">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">      </span><span class="hl-5">// Parse incoming message here</span><br/><span class="hl-1">      </span><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-3">service</span><span class="hl-1"> = {</span><br/><span class="hl-1">        </span><span class="hl-0">id:</span><span class="hl-1"> </span><span class="hl-4">extractSomeSortOfId</span><span class="hl-1">(</span><span class="hl-0">msg</span><span class="hl-1">),</span><br/><span class="hl-1">        </span><span class="hl-0">message:</span><span class="hl-1"> </span><span class="hl-0">msg</span><br/><span class="hl-1">      };</span><br/><br/><span class="hl-1">      </span><span class="hl-5">// Add it to the list of services</span><br/><span class="hl-1">      </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-4">updateService</span><span class="hl-1">(</span><span class="hl-0">service</span><span class="hl-1">);</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">  }</span><br/><br/><span class="hl-1">  </span><span class="hl-4">destroy</span><span class="hl-1">() {</span><br/><span class="hl-1">    </span><span class="hl-2">this</span><span class="hl-1">.</span><span class="hl-0">socket</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span><br/><br/><span class="hl-1">    </span><span class="hl-2">super</span><span class="hl-1">.</span><span class="hl-4">destroy</span><span class="hl-1">();</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">}</span>
 </code></pre>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="modules.html">Exports</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/abstractservicediscovery.html" class="tsd-kind-icon">Abstract<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/abstractservicepublisher.html" class="tsd-kind-icon">Abstract<wbr>Service<wbr>Publisher</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/basicservicediscovery.html" class="tsd-kind-icon">Basic<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/expiringservicediscovery.html" class="tsd-kind-icon">Expiring<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/hostandport.html" class="tsd-kind-icon">Host<wbr>And<wbr>Port</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/layeredservicediscovery.html" class="tsd-kind-icon">Layered<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/manualservicediscovery.html" class="tsd-kind-icon">Manual<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/mergedservicediscovery.html" class="tsd-kind-icon">Merged<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/timedservicediscovery.html" class="tsd-kind-icon">Timed<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/advancedmapper.html" class="tsd-kind-icon">Advanced<wbr>Mapper</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/expiringdiscoveryoptions.html" class="tsd-kind-icon">Expiring<wbr>Discovery<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/multiaddressservice.html" class="tsd-kind-icon">Multi<wbr>Address<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/releaseableservicediscovery.html" class="tsd-kind-icon">Releaseable<wbr>Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/service.html" class="tsd-kind-icon">Service</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/servicediscovery.html" class="tsd-kind-icon">Service<wbr>Discovery</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/servicepublisher.html" class="tsd-kind-icon">Service<wbr>Publisher</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/serviceupdate.html" class="tsd-kind-icon">Service<wbr>Update</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/singleaddressservice.html" class="tsd-kind-icon">Single<wbr>Address<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/timeddiscoveryoptions.html" class="tsd-kind-icon">Timed<wbr>Discovery<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="modules.html#mapper" class="tsd-kind-icon">Mapper</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="modules.html#servicepredicate" class="tsd-kind-icon">Service<wbr>Predicate</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter">
-						<a href="modules.html#isadvancedmapper" class="tsd-kind-icon">is<wbr>Advanced<wbr>Mapper</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/AbstractServiceDiscovery.html" class="tsd-kind-icon">Abstract<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-class"><a href="classes/AbstractServicePublisher.html" class="tsd-kind-icon">Abstract<wbr/>Service<wbr/>Publisher</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/BasicServiceDiscovery.html" class="tsd-kind-icon">Basic<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/ExpiringServiceDiscovery.html" class="tsd-kind-icon">Expiring<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-class"><a href="classes/HostAndPort.html" class="tsd-kind-icon">Host<wbr/>And<wbr/>Port</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/LayeredServiceDiscovery.html" class="tsd-kind-icon">Layered<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/ManualServiceDiscovery.html" class="tsd-kind-icon">Manual<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/MergedServiceDiscovery.html" class="tsd-kind-icon">Merged<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/TimedServiceDiscovery.html" class="tsd-kind-icon">Timed<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/AdvancedMapper.html" class="tsd-kind-icon">Advanced<wbr/>Mapper</a></li><li class="tsd-kind-interface"><a href="interfaces/ExpiringDiscoveryOptions.html" class="tsd-kind-icon">Expiring<wbr/>Discovery<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/MultiAddressService.html" class="tsd-kind-icon">Multi<wbr/>Address<wbr/>Service</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/ReleaseableServiceDiscovery.html" class="tsd-kind-icon">Releaseable<wbr/>Service<wbr/>Discovery</a></li><li class="tsd-kind-interface"><a href="interfaces/Service.html" class="tsd-kind-icon">Service</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/ServiceDiscovery.html" class="tsd-kind-icon">Service<wbr/>Discovery</a></li><li class="tsd-kind-interface"><a href="interfaces/ServicePublisher.html" class="tsd-kind-icon">Service<wbr/>Publisher</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/ServiceUpdate.html" class="tsd-kind-icon">Service<wbr/>Update</a></li><li class="tsd-kind-interface"><a href="interfaces/SingleAddressService.html" class="tsd-kind-icon">Single<wbr/>Address<wbr/>Service</a></li><li class="tsd-kind-interface"><a href="interfaces/TimedDiscoveryOptions.html" class="tsd-kind-icon">Timed<wbr/>Discovery<wbr/>Options</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#Mapper" class="tsd-kind-icon">Mapper</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#ServicePredicate" class="tsd-kind-icon">Service<wbr/>Predicate</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#isAdvancedMapper" class="tsd-kind-icon">is<wbr/>Advanced<wbr/>Mapper</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
