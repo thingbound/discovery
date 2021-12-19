@@ -4,15 +4,25 @@ import { BasicServiceDiscovery } from './internal';
 import { ReleaseableServiceDiscovery } from './ReleasableServiceDiscovery';
 import { ServiceDiscovery } from './ServiceDiscovery';
 
-
 /**
  * Abstract discovery for implementing layers, such as filtering and mapping.
  */
 export abstract class LayeredServiceDiscovery<S extends Service, P extends Service>
 	extends BasicServiceDiscovery<S>
 	implements ReleaseableServiceDiscovery<S> {
+	/**
+	 * Parent discovery that is being modified.
+	 */
 	protected readonly parent: ServiceDiscovery<P>;
 
+	/**
+	 * Create a new instance.
+	 *
+	 * @param type -
+	 *   type of layer
+	 * @param parent -
+	 *
+	 */
 	public constructor(type: string, parent: ServiceDiscovery<P>) {
 		super(type);
 

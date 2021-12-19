@@ -2,6 +2,9 @@ import { Service } from '../Service';
 
 import { ExpiringServiceDiscovery } from './ExpiringServiceDiscovery';
 
+/**
+ * Options available for {@link TimedDiscovery}.
+ */
 export interface TimedDiscoveryOptions {
 	/**
 	 * The number of milliseconds a service is kept before it's removed unless
@@ -15,6 +18,28 @@ export interface TimedDiscoveryOptions {
 	readonly searchTime: number;
 }
 
+/**
+ * Service discovery that combines service expiry with a timed discovery. Makes
+ * it easy to perform searches at a timed interval.
+ *
+ * ```javascript
+ * class CustomServiceDiscovery extends TimedServiceDiscovery {
+ *   constructor() {
+ *     super('discovery-id', {
+ *       expirationTime: 30*60*1000, // remove services after 30 minutes
+ *       searchTime: 5*60*1000 // search every 5 minutes
+ *     });
+ *
+ *     // Perform an initial search
+ *     this.search();
+ *   }
+ *
+ *   protected search() {
+ *      // Search for services here
+ *   }
+ * }
+ * ```
+ */
 export abstract class TimedServiceDiscovery<S extends Service> extends ExpiringServiceDiscovery<S> {
 	private readonly searchInterval: any;
 

@@ -18,6 +18,16 @@ export interface ExpiringDiscoveryOptions {
 /**
  * Discovery implementation that supports expiring services after a certain
  * amount of time.
+ *
+ * ```javascript
+ * class CustomServiceDiscovery extends ExpiringServiceDiscovery {
+ *   constructor() {
+ *     super('discovery-id-here', {
+ *       expirationTime: 30*60*1000 // expire after 30 minutes
+ *     });
+ *   }
+ * }
+ * ```
  */
 export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicServiceDiscovery<S> {
 	public readonly expirationTime: number;

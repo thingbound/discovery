@@ -22,10 +22,23 @@ export interface ServiceUpdate<I, O> {
  * Mapper that support both creation and updating of services.
  */
 export interface AdvancedMapper<I, O> {
+	/**
+	 * Function used to map an instance the first time it is found. If this
+	 * method returns a non-null value (after promise resolving) the service
+	 * will be mapped and made available on the mapped discovery.
+	 */
 	create: Mapper<I, O>;
 
+	/**
+	 * Optional function used to update a service. If this method returns a
+	 * non-null value (after promise resolving) the service will be updated on
+	 * the mapped discovery.
+	 */
 	update?: (update: ServiceUpdate<I, O>) => Promise<O | null> | O | null;
 
+	/**
+	 * Destroy a mapped service when it becomes unavailable.
+	 */
 	destroy?: (service: O) => Promise<void> | void;
 }
 

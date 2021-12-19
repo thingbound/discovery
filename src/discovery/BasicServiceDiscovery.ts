@@ -9,6 +9,9 @@ import { AbstractServiceDiscovery } from './internal';
  * functions to update, remove and set services available.
  */
 export abstract class BasicServiceDiscovery<S extends Service> extends AbstractServiceDiscovery<S> {
+	/**
+	 * Map of services in this discovery.
+	 */
 	private readonly serviceMap: Map<string, S>;
 
 	public constructor(type: string) {
@@ -40,7 +43,11 @@ export abstract class BasicServiceDiscovery<S extends Service> extends AbstractS
 	}
 
 	/**
-	 * Add or update a service that has been found.
+	 * Add or update a service that has been found. This will register the
+	 * service and emit suitable events. Services are identified internally
+	 * using their identifier. Services will be treated as new if their id
+	 * does is not currently tracked, and as updates if their id is currently
+	 * tracked.
 	 *
 	 * @param service -
 	 *   service to update
