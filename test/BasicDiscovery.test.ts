@@ -8,7 +8,9 @@ describe('Basic Discovery', () => {
 		const d = new TestDiscovery<TestService>();
 
 		let gotAvailable = false;
-		d.onAvailable(() => gotAvailable = true);
+		d.onAvailable(() => {
+			gotAvailable = true;
+		});
 
 		const service = new TestService('test:1', null);
 		d.updateService(service);
@@ -21,10 +23,14 @@ describe('Basic Discovery', () => {
 		const d = new TestDiscovery<TestService>();
 
 		let gotAvailable = false;
-		d.onAvailable(() => gotAvailable = true);
+		d.onAvailable(() => {
+			gotAvailable = true;
+		});
 
 		let gotUpdate = false;
-		d.onUpdate(() => gotUpdate = true);
+		d.onUpdate(() => {
+			gotUpdate = true;
+		});
 
 		const s1 = new TestService('test:1', null);
 		d.updateService(s1);
@@ -43,10 +49,14 @@ describe('Basic Discovery', () => {
 		const d = new TestDiscovery<TestService>();
 
 		let gotAvailable = false;
-		d.onAvailable(() => gotAvailable = true);
+		d.onAvailable(() => {
+			gotAvailable = true;
+		});
 
 		let gotUpdate = false;
-		d.onUpdate(() => gotUpdate = true);
+		d.onUpdate(() => {
+			gotUpdate = true;
+		});
 
 		const s1 = new TestService('test:1', null);
 		d.updateService(s1);
@@ -64,7 +74,9 @@ describe('Basic Discovery', () => {
 		const d = new TestDiscovery<TestService>();
 
 		let gotUnvailable = false;
-		d.onUnavailable(() => gotUnvailable = true);
+		d.onUnavailable(() => {
+			gotUnvailable = true;
+		});
 
 		d.updateService(new TestService('test:1', null));
 
