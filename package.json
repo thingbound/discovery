@@ -24,25 +24,24 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "atvik": "^2.0.0",
-    "debug": "^4.3.1",
+    "atvik": "^3.2.0",
+    "debug": "^4.3.3",
     "fast-deep-equal": "^3.1.3",
     "ip-regex": "^4.3.0",
     "timer-wheel": "^1.0.0"
   },
   "devDependencies": {
-    "@thingbound/eslint-config-typescript": "^1.0.0",
-    "@types/debug": "^4.1.5",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.2",
-    "coveralls": "^3.1.0",
-    "eslint": "^7.28.0",
-    "jest": "^27.0.4",
-    "jest-config": "^27.0.4",
+    "@thingbound/eslint-config-typescript": "^2.0.0",
+    "@types/debug": "^4.1.7",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.0",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.5.0",
+    "jest": "^27.4.5",
+    "jest-config": "^27.4.5",
     "rimraf": "^3.0.2",
-    "ts-jest": "^27.0.3",
-    "tslint": "^6.1.3",
-    "typedoc": "^0.21.0-beta.2",
-    "typescript": "^4.3.2"
+    "ts-jest": "^27.1.2",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4"
   }
 }
