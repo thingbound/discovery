@@ -32,6 +32,8 @@ export class MergedServiceDiscovery<S extends Service>
 		this.combinedServiceData = new Map();
 
 		this.instances = [];
+		const handleError = (err: Error) => this.logAndEmitError(err);
+
 		for(const discovery of discoveries) {
 			const handleAvailableOrUpdate = (service: S) => this.handleAvailableOrUpdate(discovery, service);
 			const handleUnavailable = (service: S) => this.handleUnavailable(discovery, service);
@@ -44,7 +46,7 @@ export class MergedServiceDiscovery<S extends Service>
 					discovery.onAvailable(handleAvailableOrUpdate),
 					discovery.onUpdate(handleAvailableOrUpdate),
 					discovery.onUnavailable(handleUnavailable),
-					discovery.onError(this.handleError)
+					discovery.onError(handleError)
 				]
 			};
 
@@ -74,10 +76,6 @@ export class MergedServiceDiscovery<S extends Service>
 		}
 
 		await this.release();
-	}
-
-	private handleError(error: Error) {
-		super.logAndEmitError(error);
 	}
 
 	private handleAvailableOrUpdate(discovery: ServiceDiscovery<S>, service: S) {
