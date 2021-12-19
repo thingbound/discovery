@@ -41,7 +41,7 @@ export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicS
 		this.expirationTimer = setInterval(this.removeExpiredServices.bind(this), 1000);
 	}
 
-	protected updateService(service: S, expirationTime?: number) {
+	protected override updateService(service: S, expirationTime?: number) {
 		const result = super.updateService(service);
 
 		// Schedule or reschedule the expiration of this service
@@ -50,7 +50,7 @@ export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicS
 		return result;
 	}
 
-	protected removeService(service: S | string) {
+	protected override removeService(service: S | string) {
 		const result = super.removeService(service);
 
 		if(result) {
@@ -68,7 +68,7 @@ export abstract class ExpiringServiceDiscovery<S extends Service> extends BasicS
 		}
 	}
 
-	public async destroy(): Promise<void> {
+	public override async destroy(): Promise<void> {
 		clearInterval(this.expirationTimer);
 
 		this.expirationTimer = undefined;

@@ -5,17 +5,17 @@ export interface ServiceUpdate<I, O> {
 	/**
 	 * The updated service.
 	 */
-	service: I;
+	readonly service: I;
 
 	/**
 	 * The previous service.
 	 */
-	previousService: I;
+	readonly previousService: I;
 
 	/**
 	 * The previously mapped service.
 	 */
-	previousMappedService: O;
+	readonly previousMappedService: O;
 }
 
 /**

@@ -19,12 +19,12 @@ export class FilteredServiceDiscovery<S extends Service> extends LayeredServiceD
 		this.predicate = predicate;
 	}
 
-	public get services(): S[] {
+	public override get services(): S[] {
 		return this.parent.services
 			.filter(this.predicate);
 	}
 
-	public get(id: string) {
+	public override get(id: string) {
 		const service = this.parent.get(id);
 		if(service && this.predicate(service)) {
 			return service;
@@ -33,17 +33,17 @@ export class FilteredServiceDiscovery<S extends Service> extends LayeredServiceD
 		return null;
 	}
 
-	protected handleParentServiceAvailable(service: S) {
+	protected override handleParentServiceAvailable(service: S) {
 		if(this.predicate(service)) {
 			this.updateService(service);
 		}
 	}
 
-	protected handleParentServiceUnavailable(service: S) {
+	protected override handleParentServiceUnavailable(service: S) {
 		this.removeService(service);
 	}
 
-	protected handleParentServiceUpdate(service: S) {
+	protected override handleParentServiceUpdate(service: S) {
 		if(this.predicate(service)) {
 			/*
 			 * Either the service still matches or it now matches. Make it

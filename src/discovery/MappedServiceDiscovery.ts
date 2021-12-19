@@ -163,7 +163,7 @@ export class MappedServiceDiscovery<I extends Service, S extends Service> extend
 		}
 	}
 
-	protected updateService(service: S): S | null {
+	protected override updateService(service: S): S | null {
 		const updated = super.updateService(service);
 		if(updated) {
 			this.destroyService(updated);
@@ -171,7 +171,7 @@ export class MappedServiceDiscovery<I extends Service, S extends Service> extend
 		return updated;
 	}
 
-	protected removeService(service: S | string): S | null {
+	protected override removeService(service: S | string): S | null {
 		const removed = super.removeService(service);
 		if(removed) {
 			this.destroyService(removed);

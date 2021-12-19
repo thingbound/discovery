@@ -7,12 +7,12 @@ export interface TimedDiscoveryOptions {
 	 * The number of milliseconds a service is kept before it's removed unless
 	 * it receives updates.
 	 */
-	expirationTime: number;
+	readonly expirationTime: number;
 
 	/**
 	 * The interval at which to search for services.
 	 */
-	searchTime: number;
+	readonly searchTime: number;
 }
 
 export abstract class TimedServiceDiscovery<S extends Service> extends ExpiringServiceDiscovery<S> {

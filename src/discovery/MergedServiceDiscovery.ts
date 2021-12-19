@@ -23,8 +23,8 @@ interface Instance<S extends Service> {
 export class MergedServiceDiscovery<S extends Service>
 	extends BasicServiceDiscovery<S>
 	implements ReleaseableServiceDiscovery<S> {
-	private instances: Instance<S>[];
-	private combinedServiceData: Map<string, ServiceData<S>>;
+	private readonly instances: Instance<S>[];
+	private readonly combinedServiceData: Map<string, ServiceData<S>>;
 
 	public constructor(discoveries: ServiceDiscovery<S>[]) {
 		super('combined');

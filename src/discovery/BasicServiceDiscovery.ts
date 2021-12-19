@@ -9,7 +9,7 @@ import { AbstractServiceDiscovery } from './internal';
  * functions to update, remove and set services available.
  */
 export abstract class BasicServiceDiscovery<S extends Service> extends AbstractServiceDiscovery<S> {
-	private serviceMap: Map<string, S>;
+	private readonly serviceMap: Map<string, S>;
 
 	public constructor(type: string) {
 		super(type);
