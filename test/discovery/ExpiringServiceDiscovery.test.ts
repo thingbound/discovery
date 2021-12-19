@@ -2,7 +2,7 @@ import { ExpiringServiceDiscovery } from '../../src/discovery/ExpiringServiceDis
 import { Service } from '../../src/Service';
 import { TestService } from '../TestService';
 
-describe('Timed Discovery', function() {
+describe('ExpiringServiceDiscovery', function() {
 	it('single service is removed', async function() {
 		const d = new TestDiscovery<TestService>();
 
